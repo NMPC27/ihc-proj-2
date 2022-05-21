@@ -1,14 +1,10 @@
 import { Component } from 'react';
-import Navbar from './Navbar';
 import Navbar2 from './Navbar2';
-import UserSideBar from './UserSideBar';
-import UserInfo from './UserInfo';
 
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
@@ -18,7 +14,6 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel';
 
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
@@ -121,8 +116,8 @@ export default class UserPage extends Component {
     
         this.state = {
           topGames:[
-            {rank:1, art:require("../static/games/elden/icon.png" ), title:'Elden Ring', year:2022, score:9.14,yourScore:'N/A',status:'Not played'},
-            {rank:2, art:require("../static/games/nier/icon.png" ), title:'NieR: Automata', year:2017, score:9.09,yourScore:'N/A',status:'Not played'},
+            {rank:1, art:require("../static/games/eldenRing/icon.png" ), title:'Elden Ring', year:2022, score:9.14,yourScore:'N/A',status:'Not played'},
+            {rank:2, art:require("../static/games/nierAutomata/icon.png" ), title:'NieR: Automata', year:2017, score:9.09,yourScore:'N/A',status:'Not played'},
             {rank:3, art:require("../static/games/xenoblade/icon.png" ), title:'Xenoblade Chronicles', year:2010, score: 9.08,yourScore:9,status:'Completed'},
             {rank:4, art:require("../static/games/persona5/icon.png" ), title:'Persona 5', year:2017, score:9.05,yourScore:'N/A',status:'Not played'},
             {rank:5, art:require("../static/games/celeste/icon.png" ), title:'Celeste', year:2018, score:9.04,yourScore:8,status:'Completed'},
@@ -148,7 +143,7 @@ export default class UserPage extends Component {
                                 <h1 style={{ marginTop: '7px', marginBottom: '7px'}}>My Game List</h1>
                             </Grid>
                             <Grid item  xs={12} sx={{ textAlign: "center" }}>
-                                <ButtonGroup variant="outlined" aria-label="outlined button group">
+                                <ButtonGroup variant="outlined" sx ={{boxShadow: 2}} aria-label="outlined button group">
                                     <ThemeProvider theme={theme}>
                                         <Button color="Playing" variant="outlined">
                                             Playing
@@ -202,14 +197,14 @@ export default class UserPage extends Component {
                               <TableBody>
                                 {this.state.topGames.map((val, index) => {
                                   return (
-                                    <StyledTableRow key={val.rank}>
-                                    <StyledTableCell component="th" scope="row">{val.rank}</StyledTableCell>
-                                    <StyledTableCell align="left"><CardHeader avatar={<Avatar sx={{ width: 70, height: 70 }} variant="rounded" alt="Remy Sharp" src={val.art}/>}/></StyledTableCell>
-                                    <StyledTableCell align="left">{val.title}</StyledTableCell>
-                                    <StyledTableCell align="left">{val.year}</StyledTableCell>
-                                    <StyledTableCell align="left">{val.score}</StyledTableCell>
-                                    <StyledTableCell align="left">{val.yourScore}</StyledTableCell>
-                                    <StyledTableCell align="left">{val.status}</StyledTableCell>
+                                    <StyledTableRow onClick={() => { alert(val.title) }} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} key={val.rank}>
+                                      <StyledTableCell component="th" scope="row">{val.rank}</StyledTableCell>
+                                      <StyledTableCell align="left"><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
+                                      <StyledTableCell align="left"><h3>{val.title}</h3></StyledTableCell>
+                                      <StyledTableCell align="left">{val.year}</StyledTableCell>
+                                      <StyledTableCell align="left">{val.score}</StyledTableCell>
+                                      <StyledTableCell align="left">{val.yourScore}</StyledTableCell>
+                                      <StyledTableCell align="left">{val.status}</StyledTableCell>
                                     </StyledTableRow>
                                     );
                                 })}

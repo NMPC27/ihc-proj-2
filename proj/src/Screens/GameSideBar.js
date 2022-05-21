@@ -4,6 +4,7 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -58,6 +59,16 @@ export default class GameSideBar extends Component {
                     <h3 style={{ marginTop: '0px', marginBottom: '0px'}} > { this.state.developer } </h3>
                     <h2 style={{ marginTop: '5px', marginBottom: '0px', textAlign: 'left' }} > Release Date: </h2>
                     <h3 style={{ marginTop: '0px', marginBottom: '0px'}} > { this.state.releaseDate } </h3>
+                </Item>
+                <Item style={{ marginTop: '15px'}}>
+                    <TextField
+                        style={{ marginTop: '5px', width:'100%'}}
+                        id="outlined-multiline-static"
+                        label="Personal Notes"
+                        multiline
+                        rows={27}
+                        defaultValue="Add your personal notes here"
+                    />
                 </Item>
             </div>
         );

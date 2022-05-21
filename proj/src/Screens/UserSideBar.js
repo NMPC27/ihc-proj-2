@@ -36,7 +36,7 @@ export default class UserSideBar extends Component {
               {img:require("../static/avatar/Vicente.webp" ), name:"Vicente"},
               {img:require("../static/avatar/Strom.webp" ), name:"Strom"},
               {img:require("../static/avatar/Xanex.webp" ), name:"Xanex"},
-              //{img:require("../static/avatar/Guida.jpg" ), name:"Guida"},
+              {img:require("../static/avatar/Guida.jpg" ), name:"Guida"},
             //------------------------------------------------------ so para mostrar o scroll
               {img:require("../static/avatar/Cunha.webp" ), name:"Cunha"},
               {img:require("../static/avatar/Danik.webp" ), name:"Danik"},
