@@ -60,7 +60,7 @@ export default class UserSideBar extends Component {
                     <Avatar 
                         alt="ERROR"
                         src={ this.state.user.img }
-                        sx={{ width: 256, height: 256 }}
+                        sx={{ width: "16.5vw", height: "16.5vw" }}
                     />
                 </div>
                 <Item>

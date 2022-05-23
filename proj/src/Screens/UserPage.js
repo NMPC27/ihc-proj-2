@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import Navbar from './Navbar';
-import Navbar2 from './Navbar2';
 import UserSideBar from './UserSideBar';
 import UserInfo from './UserInfo';
 

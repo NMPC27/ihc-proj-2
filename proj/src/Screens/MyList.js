@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Navbar2 from './Navbar2';
+import Navbar from './Navbar';
 
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
@@ -136,7 +136,7 @@ export default class UserPage extends Component {
     render (){
         return(
             <div>
-                <Navbar2/>
+                <Navbar/>
                     <Grid container spacing={1} style={{  marginTop: '0px'}}>
                         <Grid container spacing={2} style={{ marginLeft: 10, marginTop: '7px',marginBottom: '20px'}}>
                             <Grid item  xs={12} sx={{ textAlign: "center" }}>

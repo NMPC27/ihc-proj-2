@@ -1,18 +1,25 @@
-import { Component } from 'react';
 import * as React from 'react';
-import Box from '@mui/material/Box';
+import { Component } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import { Grid } from '@mui/material';
+import { styled, alpha } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#FFFFFF',
@@ -22,109 +29,163 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
+  const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1),
+      width: 'auto',
+    },
+  }));
+  
+  const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }));
+  
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '100%',
+        '&:focus': {
+          width: '100%',
+        },
+      },
+    },
+  }));
 
-export default class Navbar extends Component {
-
+export default class UserPage extends Component {
     constructor(props) {
         super(props);
+    
         this.state = {
-          value: "Select Games or Users",
-          user: {name:"Pedrocarush",img: require("../static/avatar/Pedrocarush.webp" )},
-        };
-      }
+            menu_open: false,
+            user: {name:"Pedrocarush",img: require("../static/avatar/Pedrocarush.webp" )}
+        }
+    
+    }
 
-    render(){
+    render() {
         return (
-            <Box
-                sx={{
-                width: "100%",
-                height: 90,
-                backgroundColor: '#12DDD4'
-                }}
-            >
+            <AppBar position="static">
+              <Container maxWidth="xl">
+                <Toolbar disableGutters>
+        
+        
+                  <Grid container spacing={2}>
+                    <Grid item xs={1}>
+                        <Button
+                        onClick={console.log('clicked')}
+                        sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                        Top Games
+                        </Button>
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Button
+                        onClick={console.log('clicked')}
+                        sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                        Gengres
+                        </Button>
+                    </Grid>
 
-            <div>
-                <Grid container spacing={2}>
+                    <Grid item xs={1}></Grid>
+                    <Grid item xs={5}>
+                        <div style={{ marginTop:'1vw' }}>
+                        <Search>
+                            <SearchIconWrapper>
+                                <SearchIcon />
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                            placeholder="Search…"
+                            inputProps={{ 'aria-label': 'search' }}
+                            style={{ width: '100%' }}
+                            />
+                        </Search>
+                        </div>
+                    </Grid>
+                    <Grid item xs={1}></Grid>
+                  
                     <Grid item xs={3}>
-                        <Item>
-                            <Grid container spacing={0}>
-                                <Grid item xs={2}>
-                                    <Avatar 
-                                        alt="ERROR" 
-                                        src= { this.state.user.img }
-                                    /> 
-                                </Grid>
+                        <Tooltip title="Open Menu">
+                        <Item style={{ marginTop:'0.5vw' }}
+                        onClick={
+                            () => {
+                                this.setState({menu_open: !this.state.menu_open})
+                            }
+                        } 
+                        >
+                            
+                            <Grid container spacing={2}>
                                 <Grid item xs={10}>
                                     <h2 style={{ marginTop: '7px', marginBottom: '0px'}} >{ this.state.user.name }</h2>
                                 </Grid>
+                                <Grid item xs={2}>
+                                    <Avatar alt="ERROR" src={ this.state.user.img } />
+                                </Grid>
                             </Grid>
-                        </Item>
+                            
+                            
+
+
+                            
+                            <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={this.state.menu_open}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={this.state.menu_open}
+                            onClose={
+                                () => {
+                                    this.setState({menu_open: !this.state.menu_open})
+                                }
+                            }
+                            >
+                
+                            <MenuItem onClick={console.log("Hi menu")}>
+                                <Typography textAlign="center"> My Profile </Typography>
+                            </MenuItem>
+                            <MenuItem onClick={console.log("Hi menu")}>
+                                <Typography textAlign="center"> Edit Profile </Typography>
+                            </MenuItem>
+                            <MenuItem onClick={console.log("Hi menu")}>
+                                <Typography textAlign="center"> Logout </Typography>
+                            </MenuItem>
+                
+                            </Menu>
+                          </Item>
+                          </Tooltip>
                     </Grid>
-                    <Grid item xs={0.5}></Grid>
-                    <Grid item xs={1}>
-                        <Button variant="outlined">TOP GAMES</Button>
-                    </Grid>
-                    <Grid item xs={1}>
-                        <Button variant="outlined">GENGRES</Button>
-                    </Grid>
-                    <Grid item xs={3}></Grid>
-                    <Grid item xs={3}>
-                        <Grid container spacing={0}>
-                            <Grid item xs={3}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">Select</InputLabel>
-                                    <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={this.state.value}
-                                    label="Select"
-                                    onChange={(event) => {
-                                        this.setState({ value: event.target.value })
-                                    }}
-                                    >
-                                    <MenuItem value={'Games'}>Games</MenuItem>
-                                    <MenuItem value={'Users'}>Users</MenuItem>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid item xs={9}>
-                                <Autocomplete
-                                    disablePortal
-                                    id="combo-box-demo"
-                                    options={optionsList}
-                                    sx={{ width: 320 }}
-                                    renderInput={(params) => <TextField {...params} label= { this.state.value } />}
-                                />
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </div>
-            </Box>
+                  </Grid>
+                </Toolbar>
+              </Container>
+            </AppBar>
         );
     }
 }
-
-const optionsList = [
-    { label: 'Hades'},
-    { label: 'GTA5'},
-    { label: 'PUBG'},   
-    { label: 'Fortnite'}, 
-    { label: 'Overwatch'},
-    { label: 'League of Legends'},
-    { label: 'CSGO'},
-    { label: 'Dota 2'},
-    { label: 'God of War'},
-    { label: 'Call of Duty'},
-    { label: 'Minecraft'},
-    { label: 'World of Warcraft'},
-    { label: 'StarCraft'},
-    { label: 'Diablo'},
-    { label: 'Star Wars'},
-    { label: 'StarCraft II'},
-    { label: 'Diablo II'},
-    { label: 'Candy Crush Saga'},
-    { label: 'Super Mario'},
-    { label: 'Super Mario Bros'}
-]
-

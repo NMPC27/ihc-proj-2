@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import Navbar from './Navbar';
-import Navbar2 from './Navbar2';
 
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
@@ -69,7 +68,7 @@ export default class TopGames extends Component {
     render(){
         return (  
             <div>
-                <Navbar2/>
+                <Navbar/>
                 <Item><h2 style={{ marginBottom: '0px', marginTop: '10px', color: '#0077ff' }} >TOP GAMES</h2> </Item>
 
                 <TableContainer component={Paper}>

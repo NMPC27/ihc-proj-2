@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import Navbar from './Navbar';
-import Navbar2 from './Navbar2';
 import GameSideBar from './GameSideBar';
 import GameInfo from './GameInfo';
 
@@ -27,7 +26,7 @@ export default class GamePage extends Component {
     render(){
         return (  
             <div>
-                <Navbar2/>
+                <Navbar/>
                 <Grid container spacing={2} style={{ marginTop: '0px'}}>
                     <Grid item xs={3}>
                         <Item><GameSideBar/></Item>
