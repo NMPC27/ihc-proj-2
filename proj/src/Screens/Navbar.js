@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Component } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
@@ -13,11 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 import { Grid } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 
@@ -71,7 +65,7 @@ const Item = styled(Paper)(({ theme }) => ({
     },
   }));
 
-export default class UserPage extends Component {
+export default class Navbar extends Component {
     constructor(props) {
         super(props);
     
