@@ -1,0 +1,56 @@
+{
+    "topGames" : [
+    {"rank":1, "art":"/games/eldenRing/icon.png" , "title":"Elden Ring", "year":2022, "score":9.14,"yourscore":"N/A","status":"Playing"},
+    {"rank":2, "art":"/games/nierAutomata/icon.png" , "title":"NieR: Automata", "year":2017, "score":9.09,"yourscore":"N/A","status":"Not played"},
+    {"rank":3, "art":"/games/xenoblade/icon.png" , "title":"Xenoblade Chronicles", "year":2010, "score": 9.08,"yourscore":9,"status":"Completed"},
+    {"rank":4, "art":"/games/persona5/icon.png" , "title":"Persona 5", "year":2017, "score":9.05,"yourscore":"N/A","status":"Dropped"},
+    {"rank":5, "art":"/games/celeste/icon.png" , "title":"Celeste", "year":2018, "score":9.04,"yourscore":8,"status":"Completed"},
+    {"rank":6, "art":"/games/gunvolt1/icon.png", "title":"Gunvolt","year":2014, "score":9.03,"yourscore":"N/A","status":"Not played"},
+    {"rank":7, "art":"/games/hades/icon.png", "title":"Hades","year":2020, "score":9.02,"yourscore":"N/A","status":"Not played"},
+    {"rank":8,"art":"/games/superMarioBrothers/icon.png" , "title":"Super Mario Bros","year":1985, "score":9.01,"yourscore":"N/A","status":"Not played"},
+    {"rank":9, "art":"/games/undertale/icon.png" , "title":"Undertale","year":2015, "score":9,"yourscore":"N/A","status":"Not played"},
+    {"rank":10, "art":"/games/cod/icon.jpg" , "title":"Call of Duty","year":2018, "score":8.99,"yourscore":"N/A","status":"Not played"},
+    {"rank":11, "art":"/games/minecraft/icon.png" , "title":"Minecraft","year":2009, "score":8.98,"yourscore":"N/A","status":"Not played"}
+  ],
+  
+    "status":[
+    {"status":"Playing"},
+    {"status":"Completed"},
+    {"status":"On Hold"},
+    {"status":"Dropped"},
+    {"status":"Plan To Play"},
+    {"status":"Not played"}
+  ],
+
+    "optionsList" : [
+    { "label": "Hades"},
+    { "label": "GTA5"},
+    { "label": "PUBG"},   
+    { "label": "Fortnite"}, 
+    { "label": "Overwatch"},
+    { "label": "League of Legends"},
+    { "label": "CSGO"},
+    { "label": "Dota 2"},
+    { "label": "God of War"},
+    { "label": "Call of Duty"},
+    { "label": "Minecraft"},
+    { "label": "World of Warcraft"},
+    { "label": "StarCraft"},
+    { "label": "Diablo"},
+    { "label": "Star Wars"},
+    { "label": "StarCraft II"},
+    { "label": "Diablo II"},
+    { "label": "Candy Crush Saga"},
+    { "label": "Super Mario"},
+    { "label": "Super Mario Bros"},
+    { "label":"Elden Ring"},
+    { "label":"NieR: Automata"},
+    { "label":"Xenoblade Chronicles"},
+    { "label":"Persona 5"},
+    { "label":"Celeste"},
+    { "label":"Gunvolt"},
+    { "label":"Hades"},
+    { "label":"Super Mario Bros"},
+    { "label":"Undertale"}
+  ]
+}

@@ -27,25 +27,25 @@ export default class UserSideBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          user: {name:"Pedrocarush",img: require("../static/avatar/Pedrocarush.webp" )},
+          user: {name:"Pedrocarush",img: "/avatar/Pedrocarush.webp"},
           friends: [
-              {img:require("../static/avatar/Cunha.webp" ), name:"Cunha"},
-              {img:require("../static/avatar/Danik.webp" ), name:"Danik"},
-              {img:require("../static/avatar/Kaluza.webp" ), name:"Kaluza"},
-              {img:require("../static/avatar/Silveira.webp" ), name:"Silveira"},
-              {img:require("../static/avatar/Vicente.webp" ), name:"Vicente"},
-              {img:require("../static/avatar/Strom.webp" ), name:"Strom"},
-              {img:require("../static/avatar/Xanex.webp" ), name:"Xanex"},
-              {img:require("../static/avatar/Guida.jpg" ), name:"Guida"},
+              {img:"/avatar/Cunha.webp", name:"Cunha"},
+              {img:"/avatar/Danik.webp", name:"Danik"},
+              {img:"/avatar/Kaluza.webp", name:"Kaluza"},
+              {img:"/avatar/Silveira.webp", name:"Silveira"},
+              {img:"/avatar/Vicente.webp", name:"Vicente"},
+              {img:"/avatar/Strom.webp", name:"Strom"},
+              {img:"/avatar/Xanex.webp", name:"Xanex"},
+              {img:"/avatar/Guida.jpg", name:"Guida"},
             //------------------------------------------------------ so para mostrar o scroll
-              {img:require("../static/avatar/Cunha.webp" ), name:"Cunha"},
-              {img:require("../static/avatar/Danik.webp" ), name:"Danik"},
-              {img:require("../static/avatar/Kaluza.webp" ), name:"Kaluza"},
-              {img:require("../static/avatar/Silveira.webp" ), name:"Silveira"},
-              {img:require("../static/avatar/Vicente.webp" ), name:"Vicente"},
-              {img:require("../static/avatar/Strom.webp" ), name:"Strom"},
-              {img:require("../static/avatar/Xanex.webp" ), name:"Xanex"},
-              {img:require("../static/avatar/Guida.jpg" ), name:"Guida"},
+                {img:"/avatar/Cunha.webp", name:"Cunha"},
+                {img:"/avatar/Danik.webp", name:"Danik"},
+                {img:"/avatar/Kaluza.webp", name:"Kaluza"},
+                {img:"/avatar/Silveira.webp", name:"Silveira"},
+                {img:"/avatar/Vicente.webp", name:"Vicente"},
+                {img:"/avatar/Strom.webp", name:"Strom"},
+                {img:"/avatar/Xanex.webp", name:"Xanex"},
+                {img:"/avatar/Guida.jpg", name:"Guida"},
             ]
         };
       }

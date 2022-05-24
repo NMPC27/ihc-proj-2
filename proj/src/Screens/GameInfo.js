@@ -41,18 +41,18 @@ export default class GamePage extends Component {
             mediaPage: 1,
             value: null,
             characters: [
-                {name: "Trevor Philips", img: require("../static/games/gta5/characters/1.webp" )},
-                {name: "Franklin Clinton", img: require("../static/games/gta5/characters/2.webp" )},
-                {name: "Michael De Santa", img: require("../static/games/gta5/characters/3.webp" )},
-                {name: "Jimmy de Santa", img: require("../static/games/gta5/characters/4.webp" )},
-                {name: "Lamar davis", img: require("../static/games/gta5/characters/5.webp" )},
-                {name: "Devin Weston", img: require("../static/games/gta5/characters/6.webp" )},
-                {name: "Trevor Philips", img: require("../static/games/gta5/characters/1.webp" )},
-                {name: "Franklin Clinton", img: require("../static/games/gta5/characters/2.webp" )},
-                {name: "Michael De Santa", img: require("../static/games/gta5/characters/3.webp" )},
-                {name: "Jimmy de Santa", img: require("../static/games/gta5/characters/4.webp" )},
-                {name: "Lamar davis", img: require("../static/games/gta5/characters/5.webp" )},
-                {name: "Devin Weston", img: require("../static/games/gta5/characters/6.webp" )}
+                {name: "Trevor Philips", img: "/games/gta5/characters/1.webp"},
+                {name: "Franklin Clinton", img: "/games/gta5/characters/2.webp"},
+                {name: "Michael De Santa", img: "/games/gta5/characters/3.webp"},
+                {name: "Jimmy de Santa", img: "/games/gta5/characters/4.webp"},
+                {name: "Lamar davis", img: "/games/gta5/characters/5.webp"},
+                {name: "Devin Weston", img: "/games/gta5/characters/6.webp"},
+                {name: "Trevor Philips", img: "/games/gta5/characters/1.webp"},
+                {name: "Franklin Clinton", img: "/games/gta5/characters/2.webp"},
+                {name: "Michael De Santa", img: "/games/gta5/characters/3.webp"},
+                {name: "Jimmy de Santa", img: "/games/gta5/characters/4.webp"},
+                {name: "Lamar davis", img: "/games/gta5/characters/5.webp"},
+                {name: "Devin Weston", img: "/games/gta5/characters/6.webp"}
             ],
             plot: `Quando um malandro de rua, um ladrão de bancos aposentado e um psicopata aterrorizante se envolvem com alguns dos criminosos mais assustadores e loucos do submundo, o governo dos EUA e a indústria do entretenimento, eles devem realizar golpes ousados para sobreviver nessa cidade implacável onde não podem confiar em ninguém, nem mesmo um no outro.
 
@@ -71,15 +71,15 @@ export default class GamePage extends Component {
             O conteúdo de acesso especial requer uma conta do Social Club da Rockstar Games. Acesse http://rockstargames.com/v/bonuscontent para mais detalhes.`,
             media:[
                 {video: "https://www.youtube.com/embed/QkkoHAzjnUs?autoplay=1&mute=1"},
-                require('../static/games/gta5/media/1.jpg'),
-                require('../static/games/gta5/media/2.jpg'),
-                require('../static/games/gta5/media/3.jpg'),
-                require('../static/games/gta5/media/4.jpg')
+                '/games/gta5/media/1.jpg',
+                '/games/gta5/media/2.jpg',
+                '/games/gta5/media/3.jpg',
+                '/games/gta5/media/4.jpg'
             ],
 
             reviews: [
                 {
-                    user: {name: 'Xanex', img: require('../static/avatar/Xanex.webp')} ,
+                    user: {name: 'Xanex', img: '/avatar/Xanex.webp'} ,
                     rating: 7,
                     helpfull: 137,
                     text: `I am a 45 yo father, probably one of the oldest people playing this game. 
@@ -97,7 +97,7 @@ export default class GamePage extends Component {
                     everything, and it has brought both me and my Son many happy memories`
                 },
                 {
-                    user: {name: 'Strom', img: require('../static/avatar/Strom.webp')} ,
+                    user: {name: 'Strom', img: '/avatar/Strom.webp'} ,
                     rating: 7,
                     helpfull: 34,
                     text: `I am a 45 yo father, probably one of the oldest people playing this game. 
@@ -115,7 +115,7 @@ export default class GamePage extends Component {
                     everything, and it has brought both me and my Son many happy memories`
                 },
                 {
-                    user: {name: 'Cunha', img: require('../static/avatar/Cunha.webp')} ,
+                    user: {name: 'Cunha', img: '/avatar/Cunha.webp'} ,
                     rating: 7,
                     helpfull: 4,
                     text: `I am a 45 yo father, probably one of the oldest people playing this game. 

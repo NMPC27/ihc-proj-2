@@ -76,7 +76,7 @@ export default class Plot extends Component {
     render() {
         return (
             <div>
-                <Bar width="625" height="323px" data={data} options={options} />
+                <Bar width="625vw" height="324vw" data={data} options={options} />
             </div>
         );
     }

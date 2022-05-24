@@ -53,11 +53,11 @@ export default class TopGames extends Component {
         this.state = {
 
             top5:[
-                {rank:1, art:require('../static/games/eldenRing/icon.png'), title:'Elden Ring', year:2022, score:9.14,yourScore:'N/A',status:'Not played'},
-                {rank:2, art:require('../static/games/nierAutomata/icon.png'), title:'NieR: Automata', year:2017, score:9.09,yourScore:'N/A',status:'Not played'},
-                {rank:3, art:require('../static/games/xenoblade/icon.png'), title:'Xenoblade Chronicles', year:2010, score: 9.08,yourScore:9,status:'Completed'},
-                {rank:4, art:require('../static/games/persona5/icon.png'), title:'Persona 5', year:2017, score:9.05,yourScore:'N/A',status:'Not played'},
-                {rank:5, art:require('../static/games/celeste/icon.png'), title:'Celeste', year:2018, score:9.04,yourScore:8,status:'Completed'},
+                {rank:1, art:'/games/eldenRing/icon.png', title:'Elden Ring', year:2022, score:9.14,yourScore:'N/A',status:'Not played'},
+                {rank:2, art:'/games/nierAutomata/icon.png', title:'NieR: Automata', year:2017, score:9.09,yourScore:'N/A',status:'Not played'},
+                {rank:3, art:'/games/xenoblade/icon.png', title:'Xenoblade Chronicles', year:2010, score: 9.08,yourScore:9,status:'Completed'},
+                {rank:4, art:'/games/persona5/icon.png', title:'Persona 5', year:2017, score:9.05,yourScore:'N/A',status:'Not played'},
+                {rank:5, art:'/games/celeste/icon.png', title:'Celeste', year:2018, score:9.04,yourScore:8,status:'Completed'},
 
               ],
           };

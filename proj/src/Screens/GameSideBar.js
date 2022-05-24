@@ -22,7 +22,7 @@ export default class GameSideBar extends Component {
         this.state = {
             name: "GTA5",
             score: 9.3,
-            icon: require('../static/games/gta5/icon.jpg'),
+            icon: '/games/gta5/icon.jpg',
             platforms: ["PC", "PS4", "XBOX"],
             developer: "Rockstar Games",
             releaseDate: "10/10/2018"

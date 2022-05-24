@@ -71,7 +71,7 @@ export default class Navbar extends Component {
     
         this.state = {
             menu_open: false,
-            user: {name:"Pedrocarush",img: require("../static/avatar/Pedrocarush.webp" )}
+            user: {name:"Pedrocarush",img: "/avatar/Pedrocarush.webp"}
         }
     
     }
@@ -84,6 +84,9 @@ export default class Navbar extends Component {
         
         
                   <Grid container spacing={2}>
+                    <Grid item xs={1}>
+                      <img src={"/logo.png"} alt="ERROR" style={{ marginTop:'1vw' }}></img>
+                    </Grid>
                     <Grid item xs={1}>
                         <Button
                         onClick={console.log('clicked')}
@@ -101,7 +104,6 @@ export default class Navbar extends Component {
                         </Button>
                     </Grid>
 
-                    <Grid item xs={1}></Grid>
                     <Grid item xs={5}>
                         <div style={{ marginTop:'1vw' }}>
                         <Search>
@@ -120,7 +122,7 @@ export default class Navbar extends Component {
                   
                     <Grid item xs={3}>
                         <Tooltip title="Open Menu">
-                        <Item style={{ marginTop:'0.5vw' }}
+                        <Item style={{ marginTop:'0.45vw' }}
                         onClick={
                             () => {
                                 this.setState({menu_open: !this.state.menu_open})

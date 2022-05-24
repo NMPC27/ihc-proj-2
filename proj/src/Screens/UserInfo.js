@@ -30,16 +30,16 @@ export default class UserInfo extends Component {
           stats:{playing: 9, completed: 211, onHold: 11, dropped: 9, planToPlay: 59},
           plot:{},
           top10:[
-              {title:"GTA 5", img: require('../static/games/gta5/icon.jpg')},
-              {title:"CS GO", img: require('../static/games/csgo/icon.jpg')},
-              {title:"Uncharted", img: require('../static/games/uncharted/icon.jpg')},
-              {title:"God Of War", img: require('../static/games/godofwar/icon.jpg')},
-              {title:"Fall Guys", img: require('../static/games/fallguys/icon.jpg')},
-              {title:"FIFA 22", img: require('../static/games/fifa22/icon.png')},
-              {title:"Among Us", img: require('../static/games/amongus/icon.webp')},
-              {title:"LOL", img: require('../static/games/lol/icon.webp')},
-              {title:"Call Of Duty", img: require('../static/games/cod/icon.jpg')},
-              {title:"Rust", img: require('../static/games/rust/icon.png')}
+              {title:"GTA 5", img: '/games/gta5/icon.jpg'},
+              {title:"CS GO", img: '/games/csgo/icon.jpg'},
+              {title:"Uncharted", img: '/games/uncharted/icon.jpg'},
+              {title:"God Of War", img: '/games/godofwar/icon.jpg'},
+              {title:"Fall Guys", img: '/games/fallguys/icon.jpg'},
+              {title:"FIFA 22", img: '/games/fifa22/icon.png'},
+              {title:"Among Us", img: '/games/amongus/icon.webp'},
+              {title:"LOL", img: '/games/lol/icon.webp'},
+              {title:"Call Of Duty", img: '/games/cod/icon.jpg'},
+              {title:"Rust", img: '/games/rust/icon.png'}
             ],
         };
       }
