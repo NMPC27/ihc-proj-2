@@ -1,4 +1,4 @@
-import { Route, Routes, Link, Outlet } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import UserPage from './Screens/UserPage';
 import GamePage from './Screens/GamePage';
 import TopGames from './Screens/TopGames';
