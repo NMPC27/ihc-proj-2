@@ -55,7 +55,9 @@ export default class UserInfo extends Component {
                                     <h2 style={{ marginTop: '7px', marginBottom: '0px'}}>Statistics</h2>
                                 </Grid>
                                 <Grid item xs={4}>
+                                <a href="/MyList" style={{ textDecoration: "none" }}>
                                 <Button variant="outlined">LIST</Button>
+                                </a>
                                 </Grid>
                             </Grid>
                             <Divider style={{ marginTop: '5px' }}/>
@@ -195,13 +197,13 @@ export default class UserInfo extends Component {
                                             opacity: [0.9, 0.8, 0.7],
                                             },
                                         }}
-
-                                        onClick={() => { alert(this.state.top10[index].title) }}
                                     >
+                                        <a href="/GamePage" style={{ textDecoration: "none"}}>
                                         <Item>
                                             <img src= { this.state.top10[index].img } alt="ERROR" width="100%" height="256"/>
                                             <h3 style={{ marginBottom: '0px', marginTop: '0px' }} > { "#" + (index+1) + " " + this.state.top10[index].title} </h3>
                                         </Item>
+                                        </a>
                                     </Box>
                                 </Grid>
                                 );

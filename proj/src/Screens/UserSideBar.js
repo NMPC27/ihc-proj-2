@@ -85,9 +85,8 @@ export default class UserSideBar extends Component {
                     >
                         {this.state.friends.map((val, index) => {
                             return (
-                            <ListItemButton
-                            onClick={() => { alert(val.name) }}
-                            >
+                            <a href="/FriendPage" style={{ textDecoration: "none", color: "#000000" }}>
+                            <ListItemButton>
                                 <ListItemAvatar>
                                     <Avatar 
                                         alt="ERROR"
@@ -98,6 +97,7 @@ export default class UserSideBar extends Component {
                                     primary={val.name}
                                 />
                             </ListItemButton>
+                            </a>
                             );
                         })}
                     </List>

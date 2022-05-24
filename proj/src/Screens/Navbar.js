@@ -85,23 +85,27 @@ export default class Navbar extends Component {
         
                   <Grid container spacing={2}>
                     <Grid item xs={1}>
-                      <img src={"/logo.png"} alt="ERROR" style={{ marginTop:'1vw' }}></img>
+                      <a href="/" style={{ textDecoration: "none" }}>
+                        <img src={"/logo.png"} alt="ERROR" style={{ marginTop:'1vw' }}></img>
+                      </a>
                     </Grid>
                     <Grid item xs={1}>
+                        <a href="/TopGames" style={{ textDecoration: "none" }}>
                         <Button
-                        onClick={console.log('clicked')}
                         sx={{ my: 2, color: 'white', display: 'block' }}
                         >
                         Top Games
                         </Button>
+                        </a>
                     </Grid>
                     <Grid item xs={1}>
+                      <a href="/Gengres" style={{ textDecoration: "none" }}>
                         <Button
-                        onClick={console.log('clicked')}
                         sx={{ my: 2, color: 'white', display: 'block' }}
                         >
                         Gengres
                         </Button>
+                      </a>
                     </Grid>
 
                     <Grid item xs={5}>
@@ -163,16 +167,22 @@ export default class Navbar extends Component {
                                 }
                             }
                             >
-                
-                            <MenuItem onClick={console.log("Hi menu")}>
+                            
+                            <a href="/UserPage" style={{ textDecoration: "none", color: "#000000" }}>
+                            <MenuItem>
                                 <Typography textAlign="center"> My Profile </Typography>
                             </MenuItem>
+                            </a>
+                            <a href="/Edit" style={{ textDecoration: "none", color: "#000000" }}>
                             <MenuItem onClick={console.log("Hi menu")}>
                                 <Typography textAlign="center"> Edit Profile </Typography>
                             </MenuItem>
+                            </a>
+                            <a href="/Login" style={{ textDecoration: "none", color: "#000000" }}>
                             <MenuItem onClick={console.log("Hi menu")}>
                                 <Typography textAlign="center"> Logout </Typography>
                             </MenuItem>
+                            </a>
                 
                             </Menu>
                           </Item>

@@ -43,7 +43,7 @@ export default class FriendSideBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          user: {name:"Pedrocarush",img: "/avatar/Pedrocarush.webp"},
+          user: {name:"Cunha",img: "/avatar/Cunha.webp"},
           affinity: 73,
           friends: [
               {img:"/avatar/Cunha.webp", name:"Cunha"},
