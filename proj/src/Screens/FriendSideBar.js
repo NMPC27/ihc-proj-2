@@ -107,7 +107,7 @@ export default class FriendSideBar extends Component {
                     <Divider />
                     <List 
                         sx={{
-                            height: 589,
+                            height: 488,
                             overflow: 'auto'
                         }}
                     >
