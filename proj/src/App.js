@@ -3,6 +3,7 @@ import UserPage from './Screens/UserPage';
 import GamePage from './Screens/GamePage';
 import TopGames from './Screens/TopGames';
 import MyList from './Screens/MyList';
+import FriendPage from './Screens/FriendPage';
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="UserPage" element={<UserPage />} />
+          <Route path="FriendPage" element={<FriendPage />} />
           <Route path="GamePage" element={<GamePage />} />
           <Route path="TopGames" element={<TopGames />} />
           <Route path="MyList" element={<MyList />} />
@@ -30,6 +32,9 @@ function Layout() {
           </li>
           <li>
             <Link to="/UserPage">UserPage</Link>
+          </li>
+          <li>
+            <Link to="/FriendPage">FriendPage</Link>
           </li>
           <li>
             <Link to="/GamePage">GamePage</Link>

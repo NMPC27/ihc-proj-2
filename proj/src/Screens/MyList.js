@@ -61,13 +61,15 @@ export default class UserPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          filtro : "All"
+          filtro : "All",
+          game: ""
         }
     }
 
     _handleKeyDown = (e) => {
       if (e.key === 'Enter') {
-        alert(e.target.value) // e.target.value -> name of the game
+        //alert(e.target.value) // e.target.value -> name of the game
+        this.setState({game : e.target.value})
       }
     }
 
@@ -125,7 +127,7 @@ export default class UserPage extends Component {
                             </Grid>
                         </Grid>
                         <Grid item xs={11}>
-                          <FilteredGameTable filtro={this.state.filtro} />
+                          <FilteredGameTable filtro={this.state.filtro} game={this.state.game} />
                         </Grid>
                     </Grid>
             </div>

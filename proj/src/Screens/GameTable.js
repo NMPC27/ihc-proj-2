@@ -95,7 +95,6 @@ class FilteredGameTable extends Component {
       // Fetch data from local storage 
       this.getStateFromLocalStorage(); 
       console.log("Component mounted");
-      console.log(this.state.topGames);
     } 
 
     constructor(props) {
@@ -123,7 +122,7 @@ class FilteredGameTable extends Component {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                  {this.state.topGames.filter(game => this.props.filtro==="All" ? game.status!== "Not played" : game.status===this.props.filtro).map((val, index) => {
+                  {this.state.topGames.filter(game => this.props.filtro==="All" ? game.status!== "Not played" : game.status===this.props.filtro).filter(game => this.props.game==="" ? game : game.title.includes(this.props.game)).map((val, index) => {
                     return (
                         <StyledTableRow key={val.rank}>
                           {statusColors.filter(color => color.id === val.status).map(filteredColor => (
