@@ -14,6 +14,8 @@ import Box from '@mui/material/Box';
 
 import Plot from './Plot';
 
+import Variables from "../variables.json";
+
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#FFFFFF',
     ...theme.typography.body2,
@@ -26,21 +28,11 @@ export default class UserInfo extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
           stats:{playing: 9, completed: 211, onHold: 11, dropped: 9, planToPlay: 59},
           plot:{},
-          top10:[
-              {title:"GTA 5", img: '/games/gta5/icon.jpg'},
-              {title:"CS GO", img: '/games/csgo/icon.jpg'},
-              {title:"Uncharted", img: '/games/uncharted/icon.jpg'},
-              {title:"God Of War", img: '/games/godofwar/icon.jpg'},
-              {title:"Fall Guys", img: '/games/fallguys/icon.jpg'},
-              {title:"FIFA 22", img: '/games/fifa22/icon.png'},
-              {title:"Among Us", img: '/games/amongus/icon.webp'},
-              {title:"LOL", img: '/games/lol/icon.webp'},
-              {title:"Call Of Duty", img: '/games/cod/icon.jpg'},
-              {title:"Rust", img: '/games/rust/icon.png'}
-            ],
+          top10:Variables.top10pedro,
         };
       }
 

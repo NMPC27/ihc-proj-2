@@ -46,7 +46,7 @@ export default class FriendSideBar extends Component {
           user: {name:"Cunha",img: "/avatar/Cunha.webp"},
           affinity: 73,
           friends: [
-              {img:"/avatar/Cunha.webp", name:"Cunha"},
+              {img:"/avatar/Pedrocarush.webp", name:"Pedrocarush"},
               {img:"/avatar/Danik.webp", name:"Danik"},
               {img:"/avatar/Kaluza.webp", name:"Kaluza"},
               {img:"/avatar/Silveira.webp", name:"Silveira"},
@@ -55,7 +55,7 @@ export default class FriendSideBar extends Component {
               {img:"/avatar/Xanex.webp", name:"Xanex"},
               {img:"/avatar/Guida.jpg", name:"Guida"},
             //------------------------------------------------------ so para mostrar o scroll
-                {img:"/avatar/Cunha.webp", name:"Cunha"},
+                {img:"/avatar/Pedrocarush.webp", name:"Pedrocarush"},
                 {img:"/avatar/Danik.webp", name:"Danik"},
                 {img:"/avatar/Kaluza.webp", name:"Kaluza"},
                 {img:"/avatar/Silveira.webp", name:"Silveira"},

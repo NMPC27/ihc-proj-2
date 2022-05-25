@@ -99,11 +99,11 @@ export default class Navbar extends Component {
                         </a>
                     </Grid>
                     <Grid item xs={1}>
-                      <a href="/Gengres" style={{ textDecoration: "none" }}>
+                      <a href="/Genders" style={{ textDecoration: "none" }}>
                         <Button
                         sx={{ my: 2, color: 'white', display: 'block' }}
                         >
-                        Gengres
+                        Genders
                         </Button>
                       </a>
                     </Grid>

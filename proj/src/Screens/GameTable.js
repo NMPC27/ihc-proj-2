@@ -201,9 +201,12 @@ class NormalGameTable extends Component {
   // Fetch data from local storage 
   getStateFromLocalStorage = () => { 
     let data = localStorage.getItem('Games'); 
-    if(data !== undefined) {
+    console.log(data);
+    if(data !== null) {
       this.setState({topGames:JSON.parse(data)}); 
-    } 
+    }else{
+      this.saveStateToLocalStorage();
+    }
     
   }
 
