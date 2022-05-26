@@ -121,9 +121,11 @@ export default class Navbar extends Component {
                     <Grid item xs={1}>
                         <Button
                         sx={{ my: 2, color: 'white', display: 'block' }}
-                        onClick={()=>{document.getElementById("overlay").style.display = "block";}}
+                        onClick={()=>{document.getElementById("overlay").style.display = "block";
+                                      document.body.style.overflow = 'hidden';
+                        }}
                         >
-                        Genders
+                        Genres
                         </Button>
                     </Grid>
 

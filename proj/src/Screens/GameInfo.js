@@ -83,54 +83,54 @@ export default class GamePage extends Component {
                     rating: 7,
                     helpfull: 137,
                     text: `I am a 45 yo father, probably one of the oldest people playing this game. 
-                    I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
-                    so we installed it on his computer and he started playing. By the end of the week 
-                    he had 24 hours on this game. This was horrible for me, as it was already hard for 
-                    me to find ways to spend time with my son, as he is always out with his friends or 
-                    just, watching YouTube. So i decided to make a Steam account and get this game to 
-                    see if I could maybe play alongside him. loaded into the game, made my character 
-                    and world and started playing but I was stuck on what you where supposed to do. 
-                    I asked my Son for help and he hosted a game for me to join. loved it as it was the 
-                    best time had spent with my Son since my wife had died. This game has ever since 
-                    brought me and my son closer again and now we actually spend time together outside 
-                    the house together as well. This game reminded me that there's fun to be had in 
-                    everything, and it has brought both me and my Son many happy memories`
+I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
+so we installed it on his computer and he started playing. By the end of the week 
+he had 24 hours on this game. This was horrible for me, as it was already hard for 
+me to find ways to spend time with my son, as he is always out with his friends or 
+just, watching YouTube. So i decided to make a Steam account and get this game to 
+see if I could maybe play alongside him. loaded into the game, made my character 
+and world and started playing but I was stuck on what you where supposed to do. 
+I asked my Son for help and he hosted a game for me to join. loved it as it was the 
+best time had spent with my Son since my wife had died. This game has ever since 
+brought me and my son closer again and now we actually spend time together outside 
+the house together as well. This game reminded me that there's fun to be had in 
+everything, and it has brought both me and my Son many happy memories`
                 },
                 {
                     user: {name: 'Strom', img: '/avatar/Strom.webp'} ,
                     rating: 7,
                     helpfull: 34,
                     text: `I am a 45 yo father, probably one of the oldest people playing this game. 
-                    I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
-                    so we installed it on his computer and he started playing. By the end of the week 
-                    he had 24 hours on this game. This was horrible for me, as it was already hard for 
-                    me to find ways to spend time with my son, as he is always out with his friends or 
-                    just, watching YouTube. So i decided to make a Steam account and get this game to 
-                    see if I could maybe play alongside him. loaded into the game, made my character 
-                    and world and started playing but I was stuck on what you where supposed to do. 
-                    I asked my Son for help and he hosted a game for me to join. loved it as it was the 
-                    best time had spent with my Son since my wife had died. This game has ever since 
-                    brought me and my son closer again and now we actually spend time together outside 
-                    the house together as well. This game reminded me that there's fun to be had in 
-                    everything, and it has brought both me and my Son many happy memories`
+I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
+so we installed it on his computer and he started playing. By the end of the week 
+he had 24 hours on this game. This was horrible for me, as it was already hard for 
+me to find ways to spend time with my son, as he is always out with his friends or 
+just, watching YouTube. So i decided to make a Steam account and get this game to 
+see if I could maybe play alongside him. loaded into the game, made my character 
+and world and started playing but I was stuck on what you where supposed to do. 
+I asked my Son for help and he hosted a game for me to join. loved it as it was the 
+best time had spent with my Son since my wife had died. This game has ever since 
+brought me and my son closer again and now we actually spend time together outside 
+the house together as well. This game reminded me that there's fun to be had in 
+everything, and it has brought both me and my Son many happy memories`
                 },
                 {
                     user: {name: 'Cunha', img: '/avatar/Cunha.webp'} ,
                     rating: 7,
                     helpfull: 4,
-                    text: `I am a 45 yo father, probably one of the oldest people playing this game. 
-                    I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
-                    so we installed it on his computer and he started playing. By the end of the week 
-                    he had 24 hours on this game. This was horrible for me, as it was already hard for 
-                    me to find ways to spend time with my son, as he is always out with his friends or 
-                    just, watching YouTube. So i decided to make a Steam account and get this game to 
-                    see if I could maybe play alongside him. loaded into the game, made my character 
-                    and world and started playing but I was stuck on what you where supposed to do. 
-                    I asked my Son for help and he hosted a game for me to join. loved it as it was the 
-                    best time had spent with my Son since my wife had died. This game has ever since 
-                    brought me and my son closer again and now we actually spend time together outside 
-                    the house together as well. This game reminded me that there's fun to be had in 
-                    everything, and it has brought both me and my Son many happy memories`
+                    text: `I am a 45 yo father, probably one of the oldest people playing this game.
+I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
+so we installed it on his computer and he started playing. By the end of the week 
+he had 24 hours on this game. This was horrible for me, as it was already hard for 
+me to find ways to spend time with my son, as he is always out with his friends or 
+just, watching YouTube. So i decided to make a Steam account and get this game to 
+see if I could maybe play alongside him. loaded into the game, made my character 
+and world and started playing but I was stuck on what you where supposed to do. 
+I asked my Son for help and he hosted a game for me to join. loved it as it was the 
+best time had spent with my Son since my wife had died. This game has ever since 
+brought me and my son closer again and now we actually spend time together outside 
+the house together as well. This game reminded me that there's fun to be had in 
+everything, and it has brought both me and my Son many happy memories`
                 },
             ]
         }
