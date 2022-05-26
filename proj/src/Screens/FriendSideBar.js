@@ -81,7 +81,7 @@ export default class FriendSideBar extends Component {
                     />
                 </div>
                 <Item style={{marginBottom: '20px'}}>
-                    <Button variant="outlined" onClick={() => {alert("affinity to you")}} style={{ width:"100%", marginBottom:"10px"}} >Affinity To You</Button>
+                    <Button variant="outlined" onClick={() => {alert("affinity to you")}} style={{marginBottom:"10px"}} >Affinity To You</Button>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                         <Box sx={{ width: '100%', mr: 1 }}>
                             <BorderLinearProgress variant="determinate" value={this.state.affinity} />

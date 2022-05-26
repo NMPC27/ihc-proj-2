@@ -14,8 +14,6 @@ import Box from '@mui/material/Box';
 
 import Plot from './Plot';
 
-import { Link } from 'react-router-dom';
-
 import Variables from "../variables.json";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -26,21 +24,17 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
-export default class UserInfo extends Component {
+export default class FriendInfo extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
+          username: 'Cunha',
           stats:{playing: 9, completed: 211, onHold: 11, dropped: 9, planToPlay: 59},
           plot:{},
           top10:Variables.top10pedro,
         };
-      }
-
-      saveStateToLocalStorage = (filterIn) => { 
-        localStorage.setItem('Filter', filterIn); 
-        console.log("Saved to local storage");
       }
 
     render(){
@@ -55,7 +49,7 @@ export default class UserInfo extends Component {
                                 </Grid>
                                 <Grid item xs={4}>
                                 <a href="/MyList" style={{ textDecoration: "none" }}>
-                                <Button onClick={() => { this.saveStateToLocalStorage("All"); }} variant="outlined">LIST</Button>
+                                <Button variant="outlined">LIST</Button>
                                 </a>
                                 </Grid>
                             </Grid>
@@ -63,12 +57,11 @@ export default class UserInfo extends Component {
                             <List dense={true}>
                                 <ListItem>
                                     <ListItemButton
-                                    onClick={() => { this.saveStateToLocalStorage("Playing"); }}
-                                    component={Link} to="/MyList"
+                                    onClick={() => { alert("playing") }}
                                     >
                                         <Avatar
                                             style={{ marginRight: '10px' }}
-                                            sx={{ bgcolor: '#1565c0' ,width: 15, height: 15 }}
+                                            sx={{ bgcolor: '#00FF00' ,width: 15, height: 15 }}
                                         >   </Avatar>
                                         <Grid container spacing={2}>
                                             <Grid item xs={11}>
@@ -82,12 +75,11 @@ export default class UserInfo extends Component {
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton
-                                    onClick={() => { this.saveStateToLocalStorage("Completed"); }}
-                                    component={Link} to="/MyList"
+                                    onClick={() => { alert("completed") }}
                                     >
                                         <Avatar
                                             style={{ marginRight: '10px' }}
-                                            sx={{ bgcolor: '#388e3c' ,width: 15, height: 15 }}
+                                            sx={{ bgcolor: '#0000FF' ,width: 15, height: 15 }}
                                         >   </Avatar>
                                         <Grid container spacing={2}>
                                             <Grid item xs={11}>
@@ -101,12 +93,11 @@ export default class UserInfo extends Component {
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton
-                                    onClick={() => { this.saveStateToLocalStorage("On Hold"); }}
-                                    component={Link} to="/MyList"
+                                    onClick={() => { alert("onHold") }}
                                     >
                                         <Avatar
                                             style={{ marginRight: '10px' }}
-                                            sx={{ bgcolor: '#fbc02d' ,width: 15, height: 15 }}
+                                            sx={{ bgcolor: '#FFFF00' ,width: 15, height: 15 }}
                                         >   </Avatar>
                                         <Grid container spacing={2}>
                                             <Grid item xs={11}>
@@ -120,12 +111,11 @@ export default class UserInfo extends Component {
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton
-                                    onClick={() => {this.saveStateToLocalStorage("Dropped"); }}
-                                    component={Link} to="/MyList"
+                                    onClick={() => { alert("dropped") }}
                                     >
                                         <Avatar
                                             style={{ marginRight: '10px' }}
-                                            sx={{ bgcolor: '#d32f2f' ,width: 15, height: 15 }}
+                                            sx={{ bgcolor: '#FF0000' ,width: 15, height: 15 }}
                                         >   </Avatar>
                                         <Grid container spacing={2}>
                                             <Grid item xs={11}>
@@ -139,12 +129,11 @@ export default class UserInfo extends Component {
                                 </ListItem>
                                 <ListItem>
                                     <ListItemButton
-                                    onClick={() => { this.saveStateToLocalStorage("Plan To Play"); }}
-                                    component={Link} to="/MyList"
+                                    onClick={() => { alert("plantoplay") }}
                                     >
                                         <Avatar
                                             style={{ marginRight: '10px' }}
-                                            sx={{ bgcolor: '#af52bf' ,width: 15, height: 15 }}
+                                            sx={{ bgcolor: '#808080' ,width: 15, height: 15 }}
                                         >   </Avatar>
                                         <Grid container spacing={2}>
                                             <Grid item xs={11}>
@@ -185,8 +174,8 @@ export default class UserInfo extends Component {
                             <Plot/>
                         </Item>
                     </Grid>
-                    <Grid item xs={1}>
-                        <h2 style={{ marginBottom: '0px', marginTop: '10px' }} >TOP10</h2>
+                    <Grid item xs={6}>
+                        <h2 style={{ marginBottom: '0px', marginTop: '10px', textAlign:'left' }} >TOP10 of { this.state.username }</h2>
                     </Grid>
                     <Grid item xs={12}>
                         <Grid container spacing={2}>

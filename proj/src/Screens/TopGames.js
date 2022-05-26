@@ -2,8 +2,6 @@ import { Component } from 'react';
 import Navbar from './Navbar';
 
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
 import {NormalGameTable} from './GameTable';
@@ -26,13 +24,13 @@ export default class TopGames extends Component {
             <div>
                 <Navbar/>
                 
-                <Grid container spacing={2} style={{ marginLeft: 10, marginTop: '7px',marginBottom: '20px'}}>
+                <Grid container spacing={2} style={{ marginTop: '7px',marginBottom: '20px'}}>
                     <Grid item  xs={12} sx={{ textAlign: "center" }}>
                         <h1 style={{ marginTop: '7px', marginBottom: '7px'}}>Top Games</h1>
                     </Grid>
                 </Grid>
                 
-                <Grid container spacing={5} style={{  marginTop: '0px'}}>
+                <Grid container spacing={3} style={{  marginTop: '0px'}}>
                     <Grid item xs={11}>
                         <NormalGameTable/>
                     </Grid>

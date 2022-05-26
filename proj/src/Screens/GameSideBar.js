@@ -55,10 +55,8 @@ export default class GameSideBar extends Component {
                     )}
                 </Stack>
                 <Item style={{ marginTop: '15px', marginBottom: '0px'}}>
-                    <h2 style={{ marginTop: '0px', marginBottom: '0px', textAlign: 'left' }} > Developer: </h2>
-                    <h3 style={{ marginTop: '0px', marginBottom: '0px'}} > { this.state.developer } </h3>
-                    <h2 style={{ marginTop: '5px', marginBottom: '0px', textAlign: 'left' }} > Release Date: </h2>
-                    <h3 style={{ marginTop: '0px', marginBottom: '0px'}} > { this.state.releaseDate } </h3>
+                    <h2 style={{ marginTop: '0px', marginBottom: '0px', textAlign: 'left' }} > Developer: { this.state.developer }</h2>
+                    <h2 style={{ marginTop: '5px', marginBottom: '0px', textAlign: 'left' }} > Release Date: { this.state.releaseDate }</h2>
                 </Item>
                 <Item style={{ marginTop: '15px'}}>
                     <TextField
@@ -66,7 +64,7 @@ export default class GameSideBar extends Component {
                         id="outlined-multiline-static"
                         label="Personal Notes"
                         multiline
-                        rows={27}
+                        rows={29}
                         defaultValue="Add your personal notes here"
                     />
                 </Item>

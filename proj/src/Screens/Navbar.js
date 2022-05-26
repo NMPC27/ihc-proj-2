@@ -15,6 +15,8 @@ import Paper from '@mui/material/Paper';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 
+import { Link } from 'react-router-dom';
+
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#FFFFFF',
     ...theme.typography.body2,
@@ -76,10 +78,23 @@ export default class Navbar extends Component {
     
     }
 
+    _handleKeyDown = (e) => {
+      if (e.key === 'Enter') {
+        //alert(e.target.value) // e.target.value -> name of the game
+        this.saveStateToLocalStorage(e.target.value);
+        <Link to="/MyList"></Link>
+      }
+    }
+
+    saveStateToLocalStorage = (searchIn) => { 
+      localStorage.setItem('Search', searchIn); 
+      console.log("Saved to local storage");
+    }
+
     render() {
         return (
             <AppBar position="static">
-              <Container maxWidth="xl">
+              <Container maxWidth="x0.5">
                 <Toolbar disableGutters>
         
         
@@ -118,6 +133,8 @@ export default class Navbar extends Component {
                             placeholder="Search…"
                             inputProps={{ 'aria-label': 'search' }}
                             style={{ width: '100%' }}
+                            onKeyDown={this._handleKeyDown}
+                            
                             />
                         </Search>
                         </div>
@@ -174,12 +191,12 @@ export default class Navbar extends Component {
                             </MenuItem>
                             </a>
                             <a href="/Edit" style={{ textDecoration: "none", color: "#000000" }}>
-                            <MenuItem onClick={console.log("Hi menu")}>
+                            <MenuItem>
                                 <Typography textAlign="center"> Edit Profile </Typography>
                             </MenuItem>
                             </a>
                             <a href="/Login" style={{ textDecoration: "none", color: "#000000" }}>
-                            <MenuItem onClick={console.log("Hi menu")}>
+                            <MenuItem>
                                 <Typography textAlign="center"> Logout </Typography>
                             </MenuItem>
                             </a>

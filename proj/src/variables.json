@@ -25,7 +25,15 @@
     {"rank":23, "art":"/games/portal2/icon.png" , "title":"Portal 2","year":2011, "score":8.85,"yourScore":"N/A","status":"Not played"},
     {"rank":24, "art":"/games/tf2/icon.png" , "title":"Team Fortress 2","year":2007, "score":8.70,"yourScore":"N/A","status":"Not played"},
     {"rank":25, "art":"/games/pubg/icon.png" , "title":"PUBG","year":2017, "score":8.69,"yourScore":"N/A","status":"Not played"},
-    {"rank":26, "art":"/games/dota2/icon.png" , "title":"DOTA 2","year":2013, "score":8.67,"yourScore":"N/A","status":"Not played"}
+    {"rank":26, "art":"/games/dota2/icon.png" , "title":"DOTA 2","year":2013, "score":8.67,"yourScore":"N/A","status":"Not played"},
+
+    {"rank":27, "art":"/games/farCry/icon.png" , "title":"Far Cry","year":2004, "score":8.65,"yourScore":"N/A","status":"Not played"},
+    {"rank":28, "art":"/games/farCry2/icon.png" , "title":"Far Cry 2","year":2008, "score":8.63,"yourScore":"N/A","status":"Not played"},
+    {"rank":29, "art":"/games/farCry3/icon.png" , "title":"Far Cry 3","year":2012, "score":8.63,"yourScore":"N/A","status":"Not played"},
+    {"rank":30, "art":"/games/farCry4/icon.png" , "title":"Far Cry 4","year":2014, "score":8.62,"yourScore":"N/A","status":"Not played"},
+    {"rank":31, "art":"/games/farCry5/icon.png" , "title":"Far Cry 5","year":2018, "score":8.61,"yourScore":"N/A","status":"Not played"},
+    {"rank":32, "art":"/games/farCry6/icon.png" , "title":"Far Cry 6","year":2021, "score":8.60,"yourScore":"N/A","status":"Not played"}
+
 
   ],
 
@@ -65,37 +73,7 @@
     {"status":"Dropped"},
     {"status":"Plan To Play"},
     {"status":"Not played"}
-  ],
-
-    "optionsList" : [
-    { "label": "Hades"},
-    { "label": "GTA5"},
-    { "label": "PUBG"},   
-    { "label": "Fortnite"}, 
-    { "label": "Overwatch"},
-    { "label": "League of Legends"},
-    { "label": "CSGO"},
-    { "label": "Dota 2"},
-    { "label": "God of War"},
-    { "label": "Call of Duty"},
-    { "label": "Minecraft"},
-    { "label": "World of Warcraft"},
-    { "label": "StarCraft"},
-    { "label": "Diablo"},
-    { "label": "Star Wars"},
-    { "label": "StarCraft II"},
-    { "label": "Diablo II"},
-    { "label": "Candy Crush Saga"},
-    { "label": "Super Mario"},
-    { "label": "Super Mario Bros"},
-    { "label":"Elden Ring"},
-    { "label":"NieR: Automata"},
-    { "label":"Xenoblade Chronicles"},
-    { "label":"Persona 5"},
-    { "label":"Celeste"},
-    { "label":"Gunvolt"},
-    { "label":"Hades"},
-    { "label":"Super Mario Bros"},
-    { "label":"Undertale"}
   ]
+
+    
 }

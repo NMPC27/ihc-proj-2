@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Navbar from './Navbar';
 import FriendSideBar from './FriendSideBar';
-import UserInfo from './UserInfo';
+import FriendInfo from './FriendInfo';
 
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
@@ -32,7 +32,7 @@ export default class FriendPage extends Component {
                         <Item><FriendSideBar/></Item>
                     </Grid>
                     <Grid item xs={9}>
-                        <Item><UserInfo/></Item>
+                        <Item><FriendInfo/></Item>
                     </Grid>
                 </Grid>
             </div>

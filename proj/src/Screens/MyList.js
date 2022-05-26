@@ -49,8 +49,8 @@ const theme = createTheme({
   });
 
 
-const options = Variables.optionsList.map((option) => {
-  const firstLetter = option.label.toUpperCase()[0];
+const options = Variables.topGames.filter(game => game.status !== "Not played").map((option) => {
+  const firstLetter = option.title.toUpperCase()[0];
   return {
     firstLetter: /[0-9]/.test(firstLetter) ? '0-9' : firstLetter,
     ...option,
@@ -72,6 +72,28 @@ export default class UserPage extends Component {
         this.setState({game : e.target.value})
       }
     }
+
+    saveStateToLocalStorage = () => { 
+      localStorage.setItem('Filter', "All"); 
+      console.log("Saved to local storage");
+    }
+
+    // Fetch data from local storage 
+    getStateFromLocalStorage = () => { 
+      let data = localStorage.getItem('Filter'); 
+      console.log(data);
+      if(data !== null) {
+        this.setState({filtro : data})
+      }else{
+        this.saveStateToLocalStorage();
+      }
+    }
+
+    componentDidMount() { 
+      // Fetch data from local storage 
+      this.getStateFromLocalStorage(); 
+      console.log("Component mounted");
+    } 
 
     render (){
         return(
@@ -118,7 +140,7 @@ export default class UserPage extends Component {
                                   id="grouped-demo"
                                   options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
                                   groupBy={(option) => option.firstLetter}
-                                  getOptionLabel={(option) => option.label}
+                                  getOptionLabel={(option) => option.title}
                                   sx={{ width: 320 }}
                                   onKeyDown={this._handleKeyDown}
                                   renderInput={(params) => <TextField {...params} label="Search" />}

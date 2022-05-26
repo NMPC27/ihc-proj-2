@@ -138,6 +138,7 @@ class FilteredGameTable extends Component {
                               id="filled-number"
                               label="Your Score"
                               type="number"
+                              inputProps={{ min: 0, max: 10 }}
                               value={val.yourScore}
                               defaultValue={val.yourScore}
                               InputLabelProps={{

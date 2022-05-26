@@ -79,7 +79,7 @@ export default class UserSideBar extends Component {
                     <Divider />
                     <List 
                         sx={{
-                            height: 589,
+                            height: "38.5vw",
                             overflow: 'auto'
                         }}
                     >
