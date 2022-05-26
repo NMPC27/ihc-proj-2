@@ -26,7 +26,7 @@ ChartJS.register(
       {
         label: "Reviews",
         data: [6, 2, 4, 8, 20, 32, 12, 10, 5, 2],
-        backgroundColor: "blue"
+        backgroundColor: "#1976D2"
       }
     ]
   };

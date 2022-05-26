@@ -25,11 +25,39 @@ export default class GameSideBar extends Component {
             icon: '/games/gta5/icon.jpg',
             platforms: ["PC", "PS4", "XBOX"],
             developer: "Rockstar Games",
-            releaseDate: "10/10/2018"
-
+            releaseDate: "10/10/2018",
+            notes:"Add your Notes Here..."
         }
-    
     }
+
+    saveStateToLocalStorage = (notesIn) => { 
+        localStorage.setItem('GameNotes', notesIn); 
+        console.log("Saved to local storage");
+      }
+  
+      // Fetch data from local storage 
+      getStateFromLocalStorage = () => { 
+        let data = localStorage.getItem('GameNotes'); 
+        console.log(data);
+        if(data !== null) {
+          this.setState({notes : data})
+        }else{
+          this.saveStateToLocalStorage("Add your Notes Here...");
+        }
+      }
+  
+      componentDidMount(){ 
+        // Fetch data from local storage 
+        this.getStateFromLocalStorage(); 
+        console.log("Component mounted");
+      } 
+
+      _handleTextFieldChange = (e) => {
+        this.setState({
+            notes: e.target.value
+        });
+        this.saveStateToLocalStorage(e.target.value);
+        }
 
     render(){
         return (  
@@ -65,7 +93,9 @@ export default class GameSideBar extends Component {
                         label="Personal Notes"
                         multiline
                         rows={29}
-                        defaultValue="Add your personal notes here"
+                        defaultValue="Add your Notes Here..."
+                        value={this.state.notes}
+                        onChange={this._handleTextFieldChange}
                     />
                 </Item>
             </div>

@@ -1,67 +1,15 @@
 import { Component } from 'react';
 import Navbar from './Navbar';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
 
-import {NormalGameTable} from './GameTable';
-import SearchIcon from '@mui/icons-material/Search';
-import { styled, alpha } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import Box from '@mui/material/Box';
+import {SearchGameTable, SearchUserTable} from './GameTable';
 
 import Variables from "../variables.json";
 
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#FFFFFF',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }));
-
-  const Search2 = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(0),
-      width: 'auto',
-    },
-  }));
-  
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }));
-  
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('sm')]: {
-        width: '100%',
-        '&:focus': {
-          width: '100%',
-        },
-      },
-    },
-  }));
 
 export default class Search extends Component {
     constructor(props) {
@@ -69,7 +17,8 @@ export default class Search extends Component {
     
         this.state = {
             topGames:Variables.topGames,
-            search:'ERROR'
+            search:'ERROR',
+            searchType:'Games'
           };
 
         }
@@ -101,37 +50,38 @@ export default class Search extends Component {
             <div>
                 <Navbar/>
                 
-                <Grid container spacing={2} style={{ marginLeft: 10, marginTop: '7px',marginBottom: '20px'}}>
-                    <Grid item  xs={12} sx={{ textAlign: "Left" }}>
-                        <h1 style={{ marginTop: '7px', marginBottom: '7px'}}>Search Games</h1>
+                <Grid container spacing={2} style={{ marginTop: '7px',marginBottom: '20px'}}>
+                    <Grid item  xs={12} sx={{ textAlign: "center" }}>
+                        <h1 style={{ marginTop: '7px', marginBottom: '7px'}}>Search Results for "{this.state.search}"</h1>
+                        {   
+                            this.state.searchType === 'Games' ?
+                            <ButtonGroup variant="outlined" aria-label="outlined button group">
+                                <Button variant='contained'>Games</Button>
+                                <Button onClick={()=> {this.setState({searchType: 'Users'})}}>Users</Button>
+                            </ButtonGroup>
+                            :
+                            <ButtonGroup variant="outlined" aria-label="outlined button group">
+                                <Button onClick={()=> {this.setState({searchType: 'Games'})}}>Games</Button>
+                                <Button variant='contained'>Users</Button>
+                            </ButtonGroup>
+                        }
+                        
                     </Grid>
-                    <Grid item xs={3}></Grid>
-                    <Grid item xs={6}>
-                        <Box
-                            sx={{
-                                backgroundColor: '#1976D2',
-                            }}
-                        >
-                            <Search2>
-                                <SearchIconWrapper>
-                                    <SearchIcon />
-                                </SearchIconWrapper>
-                                <StyledInputBase
-                                placeholder= {'Search Results for "' + this.state.search + '"' }
-                                inputProps={{ 'aria-label': 'search' }}
-                                style={{ width: '100%' }}
-                                onKeyDown={this._handleKeyDown}
-                                />
-                            </Search2>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={3}></Grid>
                 </Grid>
+
                 
-                <Grid container spacing={5} style={{  marginTop: '0px'}}>
-                    <Grid item xs={11}>
-                        <NormalGameTable/>
-                    </Grid>
+                
+                <Grid container spacing={5} style={{paddingTop: '0px'}}>
+                    {   
+                        this.state.searchType === 'Games' ?
+                        <Grid item xs={11}>
+                            <SearchGameTable game={this.state.search.toLowerCase()} />
+                        </Grid>
+                        :
+                        <Grid item xs={6} style={{ width:'50%', margin: 'auto' }}>
+                            <SearchUserTable name={this.state.search.toLowerCase()} />
+                        </Grid>
+                    }
                 </Grid>
 
  

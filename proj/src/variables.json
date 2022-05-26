@@ -17,7 +17,7 @@
     {"rank":15, "art":"/games/godofwar/icon.jpg" , "title":"God Of War","year":2018, "score":8.92,"yourScore":"10","status":"Completed"},
     {"rank":16, "art":"/games/fallguys/icon.jpg" , "title":"Fall Guys","year":2020, "score":8.92,"yourScore":"10","status":"Completed"},
     {"rank":17, "art":"/games/fifa22/icon.png" , "title":"FIFA 22","year":2021, "score":8.90,"yourScore":"10","status":"Completed"},
-    {"rank":18, "art":"/games/amongus/icon.webp" , "title":"Among Us","year":2018, "score":8.89,"yourScore":"10","status":"Completed"},
+    {"rank":18, "art":"/games/amongus/icon.png" , "title":"Among Us","year":2018, "score":8.89,"yourScore":"10","status":"Completed"},
     {"rank":19, "art":"/games/lol/icon.webp" , "title":"League of Legends","year":2009, "score":8.88,"yourScore":"10","status":"Completed"},
     {"rank":20, "art":"/games/rust/icon.png" , "title":"Rust","year":2013, "score":8.88,"yourScore":"10","status":"Completed"},
     {"rank":21, "art":"/games/darkSouls3/icon.png" , "title":"Dark Souls 3","year":2016, "score":8.86,"yourScore":"N/A","status":"Not played"},
@@ -59,7 +59,7 @@
     {"title":"God Of War", "img": "/games/godofwar/icon.jpg"},
     {"title":"Fall Guys", "img": "/games/fallguys/icon.jpg"},
     {"title":"FIFA 22", "img": "/games/fifa22/icon.png"},
-    {"title":"Among Us", "img": "/games/amongus/icon.webp"},
+    {"title":"Among Us", "img": "/games/amongus/icon.png"},
     {"title":"LOL", "img": "/games/lol/icon.webp"},
     {"title":"Call Of Duty", "img": "/games/cod/icon.jpg"},
     {"title":"Rust", "img": "/games/rust/icon.png"}
@@ -73,7 +73,57 @@
     {"status":"Dropped"},
     {"status":"Plan To Play"},
     {"status":"Not played"}
-  ]
+  ],
 
+  "friendsPedro":[
+    
+      {"img":"/avatar/Cunha.webp", "name":"Cunha"},
+      {"img":"/avatar/Danik.webp", "name":"Danik"},
+      {"img":"/avatar/Kaluza.webp", "name":"Kaluza"},
+      {"img":"/avatar/Silveira.webp", "name":"Silveira"},
+      {"img":"/avatar/Vicente.webp", "name":"Vicente"},
+      {"img":"/avatar/Strom.webp", "name":"Strom"},
+      {"img":"/avatar/Xanex.webp", "name":"Xanex"},
+      {"img":"/avatar/Guida.jpg", "name":"Guida"},
+      {"img":"/avatar/Cunha.webp", "name":"Cunha"},
+      {"img":"/avatar/Danik.webp", "name":"Danik"},
+      {"img":"/avatar/Kaluza.webp", "name":"Kaluza"},
+      {"img":"/avatar/Silveira.webp", "name":"Silveira"},
+      {"img":"/avatar/Vicente.webp", "name":"Vicente"},
+      {"img":"/avatar/Strom.webp", "name":"Strom"},
+      {"img":"/avatar/Xanex.webp", "name":"Xanex"},
+      {"img":"/avatar/Guida.jpg", "name":"Guida"}
+  ],
+
+  "friendsCunha":[
+      {"img":"/avatar/Pedrocarush.webp", "name":"Pedrocarush"},
+      {"img":"/avatar/Danik.webp", "name":"Danik"},
+      {"img":"/avatar/Kaluza.webp", "name":"Kaluza"},
+      {"img":"/avatar/Silveira.webp", "name":"Silveira"},
+      {"img":"/avatar/Vicente.webp", "name":"Vicente"},
+      {"img":"/avatar/Strom.webp", "name":"Strom"},
+      {"img":"/avatar/Xanex.webp", "name":"Xanex"},
+      {"img":"/avatar/Guida.jpg", "name":"Guida"},
+      {"img":"/avatar/Pedrocarush.webp", "name":"Pedrocarush"},
+      {"img":"/avatar/Danik.webp", "name":"Danik"},
+      {"img":"/avatar/Kaluza.webp", "name":"Kaluza"},
+      {"img":"/avatar/Silveira.webp", "name":"Silveira"},
+      {"img":"/avatar/Vicente.webp", "name":"Vicente"},
+      {"img":"/avatar/Strom.webp", "name":"Strom"},
+      {"img":"/avatar/Xanex.webp", "name":"Xanex"},
+      {"img":"/avatar/Guida.jpg", "name":"Guida"}
+  ],
+
+  "users":[
+    {"img":"/avatar/Pedrocarush.webp", "name":"Pedrocarush"},
+    {"img":"/avatar/Cunha.webp", "name":"Cunha"},
+    {"img":"/avatar/Danik.webp", "name":"Danik"},
+    {"img":"/avatar/Kaluza.webp", "name":"Kaluza"},
+    {"img":"/avatar/Silveira.webp", "name":"Silveira"},
+    {"img":"/avatar/Vicente.webp", "name":"Vicente"},
+    {"img":"/avatar/Strom.webp", "name":"Strom"},
+    {"img":"/avatar/Xanex.webp", "name":"Xanex"},
+    {"img":"/avatar/Guida.jpg", "name":"Guida"}
+]
     
 }

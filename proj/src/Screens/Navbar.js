@@ -15,7 +15,8 @@ import Paper from '@mui/material/Paper';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 
-import { Link } from 'react-router-dom';
+import Overlay from './Overlay';
+
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#FFFFFF',
@@ -82,7 +83,9 @@ export default class Navbar extends Component {
       if (e.key === 'Enter') {
         //alert(e.target.value) // e.target.value -> name of the game
         this.saveStateToLocalStorage(e.target.value);
-        <Link to="/MyList"></Link>
+        const { href } = window.location;
+        window.location.href = '/Search';
+        
       }
     }
 
@@ -93,6 +96,8 @@ export default class Navbar extends Component {
 
     render() {
         return (
+          <div>
+            <Overlay/>
             <AppBar position="static">
               <Container maxWidth="x0.5">
                 <Toolbar disableGutters>
@@ -114,13 +119,12 @@ export default class Navbar extends Component {
                         </a>
                     </Grid>
                     <Grid item xs={1}>
-                      <a href="/Genders" style={{ textDecoration: "none" }}>
                         <Button
                         sx={{ my: 2, color: 'white', display: 'block' }}
+                        onClick={()=>{document.getElementById("overlay").style.display = "block";}}
                         >
                         Genders
                         </Button>
-                      </a>
                     </Grid>
 
                     <Grid item xs={5}>
@@ -209,6 +213,7 @@ export default class Navbar extends Component {
                 </Toolbar>
               </Container>
             </AppBar>
+          </div>
         );
     }
 }

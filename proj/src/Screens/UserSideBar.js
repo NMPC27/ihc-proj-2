@@ -13,6 +13,7 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 
+import Variables from "../variables.json";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#FFFFFF',
@@ -22,33 +23,47 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
   }));
 
+ 
+
 export default class UserSideBar extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
           user: {name:"Pedrocarush",img: "/avatar/Pedrocarush.webp"},
-          friends: [
-              {img:"/avatar/Cunha.webp", name:"Cunha"},
-              {img:"/avatar/Danik.webp", name:"Danik"},
-              {img:"/avatar/Kaluza.webp", name:"Kaluza"},
-              {img:"/avatar/Silveira.webp", name:"Silveira"},
-              {img:"/avatar/Vicente.webp", name:"Vicente"},
-              {img:"/avatar/Strom.webp", name:"Strom"},
-              {img:"/avatar/Xanex.webp", name:"Xanex"},
-              {img:"/avatar/Guida.jpg", name:"Guida"},
-            //------------------------------------------------------ so para mostrar o scroll
-                {img:"/avatar/Cunha.webp", name:"Cunha"},
-                {img:"/avatar/Danik.webp", name:"Danik"},
-                {img:"/avatar/Kaluza.webp", name:"Kaluza"},
-                {img:"/avatar/Silveira.webp", name:"Silveira"},
-                {img:"/avatar/Vicente.webp", name:"Vicente"},
-                {img:"/avatar/Strom.webp", name:"Strom"},
-                {img:"/avatar/Xanex.webp", name:"Xanex"},
-                {img:"/avatar/Guida.jpg", name:"Guida"},
-            ]
+          friends: Variables.friendsPedro,
+          textFieldValue:"",
         };
       }
+
+      _filterFriends = (e) => {
+          
+        if (e.key === 'Enter') {
+         
+         if(e.target.value===""){
+            this.setState(this.state.friends = Variables.friendsPedro);
+         }else{
+            this.setState(this.state.friends = Variables.friendsPedro);
+            this.setState(this.state.friends = this.state.friends.filter(friend => friend.name.toLowerCase().includes(e.target.value.toLowerCase())));
+        }
+        }
+      }
+
+      filterFriends(input) {
+          console.log(input);
+        if(input===""){
+            this.setState(this.state.friends = Variables.friendsPedro);
+         }else{
+            this.setState(this.state.friends = Variables.friendsPedro);
+            this.setState(this.state.friends = this.state.friends.filter(friend => friend.name.toLowerCase().includes(input.toLowerCase())));
+        }
+      }
+
+      _handleTextFieldChange = (e) => {
+        this.setState({
+            textFieldValue: e.target.value
+        });
+        }
 
     render(){
         return (
@@ -67,11 +82,11 @@ export default class UserSideBar extends Component {
                     <div style={{ marginBottom: '5px'}}>
                         <Grid container spacing={0}>
                             <Grid item xs={10}>
-                                <TextField fullWidth id="outlined-basic" label="Search for friends" variant="outlined" />
+                                <TextField fullWidth id="outlined-basic" label="Search for friends" value={this.state.textFieldValue} onChange={this._handleTextFieldChange} variant="outlined" onKeyDown={this._filterFriends}/>
                             </Grid>
                             <Grid item xs={2}>
-                                <IconButton>
-                                    <SearchIcon fontSize='large'/>
+                                <IconButton >
+                                    <SearchIcon fontSize='large' value="a" onClick={() => this.filterFriends(this.state.textFieldValue)}/>
                                 </IconButton>
                             </Grid>
                         </Grid>

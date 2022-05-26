@@ -31,7 +31,7 @@ export default class FriendInfo extends Component {
 
         this.state = {
           username: 'Cunha',
-          stats:{playing: 9, completed: 211, onHold: 11, dropped: 9, planToPlay: 59},
+          stats:{playing: 45, completed: 123, onHold: 2, dropped: 32, planToPlay: 3},
           plot:{},
           top10:Variables.top10pedro,
         };

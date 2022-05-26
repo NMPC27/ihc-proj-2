@@ -17,6 +17,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
+import Variables from "../variables.json";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 10,
@@ -45,26 +46,35 @@ export default class FriendSideBar extends Component {
         this.state = {
           user: {name:"Cunha",img: "/avatar/Cunha.webp"},
           affinity: 73,
-          friends: [
-              {img:"/avatar/Pedrocarush.webp", name:"Pedrocarush"},
-              {img:"/avatar/Danik.webp", name:"Danik"},
-              {img:"/avatar/Kaluza.webp", name:"Kaluza"},
-              {img:"/avatar/Silveira.webp", name:"Silveira"},
-              {img:"/avatar/Vicente.webp", name:"Vicente"},
-              {img:"/avatar/Strom.webp", name:"Strom"},
-              {img:"/avatar/Xanex.webp", name:"Xanex"},
-              {img:"/avatar/Guida.jpg", name:"Guida"},
-            //------------------------------------------------------ so para mostrar o scroll
-                {img:"/avatar/Pedrocarush.webp", name:"Pedrocarush"},
-                {img:"/avatar/Danik.webp", name:"Danik"},
-                {img:"/avatar/Kaluza.webp", name:"Kaluza"},
-                {img:"/avatar/Silveira.webp", name:"Silveira"},
-                {img:"/avatar/Vicente.webp", name:"Vicente"},
-                {img:"/avatar/Strom.webp", name:"Strom"},
-                {img:"/avatar/Xanex.webp", name:"Xanex"},
-                {img:"/avatar/Guida.jpg", name:"Guida"},
-            ]
+          friends: Variables.friendsCunha
         };
+      }
+
+      _filterFriends = (e) => {
+        if (e.key === 'Enter') {
+         
+         if(e.target.value===""){
+            this.setState(this.state.friends = Variables.friendsCunha);
+         }else{
+          this.setState(this.state.friends = this.state.friends.filter(friend => friend.name.toLowerCase().includes(e.target.value.toLowerCase())));
+        }
+        }
+      }
+
+      filterFriends(input) {
+        console.log(input);
+      if(input===""){
+          this.setState(this.state.friends = Variables.friendsPedro);
+       }else{
+          this.setState(this.state.friends = Variables.friendsPedro);
+          this.setState(this.state.friends = this.state.friends.filter(friend => friend.name.toLowerCase().includes(input.toLowerCase())));
+      }
+    }
+
+    _handleTextFieldChange = (e) => {
+      this.setState({
+          textFieldValue: e.target.value
+      });
       }
 
     render(){
@@ -95,11 +105,11 @@ export default class FriendSideBar extends Component {
                     <div style={{ marginBottom: '5px'}}>
                         <Grid container spacing={0}>
                             <Grid item xs={10}>
-                                <TextField fullWidth id="outlined-basic" label="Search for friends" variant="outlined" />
+                                <TextField fullWidth id="outlined-basic" label="Search for friends" value={this.state.textFieldValue} onChange={this._handleTextFieldChange} variant="outlined" onKeyDown={this._filterFriends}/>
                             </Grid>
                             <Grid item xs={2}>
-                                <IconButton>
-                                    <SearchIcon fontSize='large'/>
+                                <IconButton >
+                                    <SearchIcon fontSize='large' value="a" onClick={() => this.filterFriends(this.state.textFieldValue)}/>
                                 </IconButton>
                             </Grid>
                         </Grid>
@@ -113,19 +123,19 @@ export default class FriendSideBar extends Component {
                     >
                         {this.state.friends.map((val, index) => {
                             return (
-                            <ListItemButton
-                            onClick={() => { alert(val.name) }}
-                            >
-                                <ListItemAvatar>
-                                    <Avatar 
-                                        alt="ERROR"
-                                        src={val.img}
+                            <a href="/FriendPage" style={{ textDecoration: "none", color: "#000000" }}>
+                                <ListItemButton>
+                                    <ListItemAvatar>
+                                        <Avatar 
+                                            alt="ERROR"
+                                            src={val.img}
+                                        />
+                                    </ListItemAvatar>
+                                    <ListItemText
+                                        primary={val.name}
                                     />
-                                </ListItemAvatar>
-                                <ListItemText
-                                    primary={val.name}
-                                />
-                            </ListItemButton>
+                                </ListItemButton>
+                            </a>
                             );
                         })}
                     </List>

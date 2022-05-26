@@ -10,6 +10,7 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import { Link } from 'react-router-dom';
 
 import TextField from '@mui/material/TextField';
 
@@ -122,15 +123,15 @@ class FilteredGameTable extends Component {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                  {this.state.topGames.filter(game => this.props.filtro==="All" ? game.status!== "Not played" : game.status===this.props.filtro).filter(game => this.props.game==="" ? game : game.title.includes(this.props.game)).map((val, index) => {
+                  {this.state.topGames.filter(game => this.props.filtro==="All" ? game.status!== "Not played" : game.status===this.props.filtro).filter(game => this.props.game==="" ? game : game.title.toLowerCase().includes(this.props.game.toLowerCase())).map((val, index) => {
                     return (
                         <StyledTableRow key={val.rank}>
                           {statusColors.filter(color => color.id === val.status).map(filteredColor => (
                             <TableCell scope="row" sx={{backgroundColor: filteredColor.color }}></TableCell>
                           ))}
                           <StyledTableCell align="center" scope="row">{val.rank}</StyledTableCell>
-                          <StyledTableCell align="center" scope="row" onClick={() => { alert(val.title) }} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
-                          <StyledTableCell onClick={() => { alert(val.title) }} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.title}</h3></StyledTableCell>
+                          <StyledTableCell align="center" scope="row" component={Link} to="/GamePage" style={{ textDecoration: "none"}} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
+                          <StyledTableCell component={Link} to="/GamePage" style={{ textDecoration: "none"}} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.title}</h3></StyledTableCell>
                           <StyledTableCell align="center">{val.year}</StyledTableCell>
                           <StyledTableCell align="center">{val.score}</StyledTableCell>
                           <StyledTableCell align="center">
@@ -248,8 +249,8 @@ class NormalGameTable extends Component {
                         <TableCell scope="row" sx={{backgroundColor: filteredColor.color }}></TableCell>
                       ))}
                       <StyledTableCell align="center" scope="row">{val.rank}</StyledTableCell>
-                      <StyledTableCell align="center" scope="row" onClick={() => { alert(val.title) }} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
-                      <StyledTableCell onClick={() => { alert(val.title) }} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.title}</h3></StyledTableCell>
+                      <StyledTableCell align="center" scope="row" component={Link} to="/GamePage" style={{ textDecoration: "none"}} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
+                      <StyledTableCell component={Link} to="/GamePage" style={{ textDecoration: "none"}} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.title}</h3></StyledTableCell>
                       <StyledTableCell align="center">{val.year}</StyledTableCell>
                       <StyledTableCell align="center">{val.score}</StyledTableCell>
                       <StyledTableCell align="center">
@@ -310,4 +311,140 @@ class NormalGameTable extends Component {
   }
 }
 
-export {FilteredGameTable, NormalGameTable };
+
+class SearchGameTable extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+        "topGames" : Variables.topGames
+      };
+    }
+
+  render(){
+      return (
+        <div>
+          <TableContainer sx={{ marginLeft: '4%'}} component={Paper}>
+            <Table aria-label="customized table">
+              <TableHead>
+                <TableRow key="Rank">
+                  <StyledTableCell align="left" sx={{width: '1%'}} ></StyledTableCell>
+                  <StyledTableCell align="center" >Rank</StyledTableCell>
+                  <StyledTableCell align="center">Art</StyledTableCell>
+                  <StyledTableCell align="center">Title</StyledTableCell>
+                  <StyledTableCell align="center">Year</StyledTableCell>
+                  <StyledTableCell align="center">Score</StyledTableCell>
+                  <StyledTableCell align="center">Your Score</StyledTableCell>
+                  <StyledTableCell align="center">Status</StyledTableCell>
+                  </TableRow>
+              </TableHead>
+              <TableBody>
+                {this.state.topGames.filter(game => this.props.game==="" ? game : game.title.toLowerCase().includes(this.props.game)).map((val, index) => {
+                  return (
+                      <StyledTableRow key={val.rank}>
+                        {statusColors.filter(color => color.id === val.status).map(filteredColor => (
+                          <TableCell scope="row" sx={{backgroundColor: filteredColor.color }}></TableCell>
+                        ))}
+                        <StyledTableCell align="center" scope="row">{val.rank}</StyledTableCell>
+                        <StyledTableCell component={Link} to="/GamePage" style={{ textDecoration: "none"}} align="center" scope="row" sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
+                        <StyledTableCell component={Link} to="/GamePage" style={{ textDecoration: "none"}} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.title}</h3></StyledTableCell>
+                        <StyledTableCell align="center">{val.year}</StyledTableCell>
+                        <StyledTableCell align="center">{val.score}</StyledTableCell>
+                        <StyledTableCell align="center">
+                          <TextField
+                            id="filled-number"
+                            label="Your Score"
+                            type="number"
+                            inputProps={{ min: 0, max: 10 }}
+                            value={val.yourScore}
+                            defaultValue={val.yourScore}
+                            InputLabelProps={{
+                              shrink: true,
+                            }}
+                            onChange={(event) => {
+                              var gamesCopy = this.state.topGames;
+                              gamesCopy[index].yourScore = event.target.value;
+                              this.setState({
+                                topGames: gamesCopy
+                              })
+                             this.saveStateToLocalStorage();
+                            }}
+                          />
+                        </StyledTableCell>
+                        <StyledTableCell align="left">
+                          <Box sx={{ minWidth: 120 }}>
+                            <FormControl fullWidth>
+                                <InputLabel id="demo-simple-select-label">Status</InputLabel>
+                                <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                value={val.status}
+                                label="Select"
+                                onChange={(event) => {
+                                  var gamesCopy = this.state.topGames;
+                                  gamesCopy[index].status = event.target.value;
+                                  this.setState({
+                                      topGames: gamesCopy
+                                  })
+                                  this.saveStateToLocalStorage();
+                                }}
+                                >
+                                {Variables.status.map((val, index) => {
+                                    return (
+                                        <MenuItem value={val.status}>{val.status}</MenuItem>
+                                    );
+                                })}
+                                </Select>
+                            </FormControl>
+                          </Box>
+                        </StyledTableCell>
+                    </StyledTableRow>
+                    );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer> 
+        </div>
+      );
+  }
+}
+
+
+class SearchUserTable extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+        "users" : Variables.users
+      };
+    }
+
+  render(){
+      return (
+        <div>
+          <TableContainer component={Paper}>
+            <Table aria-label="customized table">
+              <TableHead>
+                <TableRow key="Rank">
+                  <StyledTableCell align="center">Avatar</StyledTableCell>
+                  <StyledTableCell align="center">Name</StyledTableCell>
+                  </TableRow>
+              </TableHead>
+              <TableBody>
+                {this.state.users.filter(user => user.name.toLowerCase().includes(this.props.name)).map((val, index) => {
+                  return (
+                      <StyledTableRow component={Link} to="/FriendPage" style={{ textDecoration: "none"}}>
+                        <StyledTableCell align="center" scope="row" sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.img}/>}/></StyledTableCell>
+                        <StyledTableCell sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.name}</h3></StyledTableCell>
+                      </StyledTableRow>
+                    );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer> 
+        </div>
+      );
+  }
+}
+
+export {FilteredGameTable, NormalGameTable, SearchGameTable, SearchUserTable};

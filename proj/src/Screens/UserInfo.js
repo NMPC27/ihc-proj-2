@@ -159,7 +159,8 @@ export default class UserInfo extends Component {
                                 <Divider/>
                                 <ListItem>
                                     <ListItemButton
-                                    onClick={() => { alert("total") }}
+                                    onClick={() => {this.saveStateToLocalStorage("All"); }}
+                                    component={Link} to="/MyList"
                                     >
                                         <Grid container spacing={2}>
                                             <Grid item xs={11}>

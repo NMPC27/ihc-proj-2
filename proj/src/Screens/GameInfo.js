@@ -248,9 +248,7 @@ export default class GamePage extends Component {
                             >
                                 {this.state.characters.map((val, index) => {
                                     return (
-                                    <ListItemButton
-                                    onClick={() => { alert(val.name) }}
-                                    >
+                                    <ListItemButton>
                                         <ListItemAvatar>
                                             <Avatar 
                                                 alt="ERROR"
