@@ -19,7 +19,14 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import StarIcon from '@mui/icons-material/Star';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Rating from '@mui/material/Rating';
 
+import Variables from '../variables.json';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#FFFFFF',
@@ -34,11 +41,14 @@ export default class GamePage extends Component {
         super(props);
     
         this.state = {
+            "topGames": Variables.topGames,
             genres: ["Action","Adventure","Casual"],
             score: 9.3,
             num_reviews: 172385,
             rank: 17,
             mediaPage: 1,
+            popupReview: false,
+            reviewRating: 1,
             value: null,
             characters: [
                 {name: "Trevor Philips", img: "/games/gta5/characters/1.webp"},
@@ -141,6 +151,26 @@ everything, and it has brought both me and my Son many happy memories`
         this.setState({mediaPage: value});
     }
 
+    saveStateToLocalStorage = () => { 
+        localStorage.setItem('Games', JSON.stringify(this.state.topGames)); 
+        console.log("Saved to local storage");
+      }
+
+    getStateFromLocalStorage = () => { 
+        let data = localStorage.getItem('Games'); 
+        if(data !== null) {
+          this.setState({topGames:JSON.parse(data)}); 
+        }else{
+            this.saveStateToLocalStorage();
+        }
+      }
+  
+      componentDidMount() { 
+        // Fetch data from local storage 
+        this.getStateFromLocalStorage(); 
+        console.log("Component mounted");
+      } 
+
     render(){
         return (  
             <div>
@@ -167,29 +197,84 @@ everything, and it has brought both me and my Son many happy memories`
                                 </Grid>
                             </Grid>
                             <Divider style={{marginBottom: '10px'}} />
+
                             <Grid container spacing={2}>
-                                <Grid item xs={8}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">Select Game State</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        value={this.state.value}
-                                        label="Select Game State"
-                                        onChange={(event) => {
-                                            this.setState({ value: event.target.value })
-                                        }}
-                                    >
-                                        <MenuItem value={1}>Playing</MenuItem>
-                                        <MenuItem value={2}>Completed</MenuItem>
-                                        <MenuItem value={3}>On-Hold</MenuItem>
-                                        <MenuItem value={4}>Dropped</MenuItem>
-                                        <MenuItem value={5}>Plan To Play</MenuItem>
+                            {this.state.topGames.filter(game=> game.title==="GTA 5" ).map((val, index) => {
+                                 return (
+                                    <Grid item xs={8}>
+                                
+                                    <FormControl fullWidth>
+                                        <InputLabel id="demo-simple-select-label">Select Game State</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            label="Select Game State"
+                                            value={this.state.topGames[11].status}
+                                            onChange={(event) => {
+                                                var gamesCopy = this.state.topGames;
+                                                gamesCopy[11].status = event.target.value;
+                                                this.setState({
+                                                    topGames: gamesCopy
+                                                })
+                                                
+                                                this.saveStateToLocalStorage();
+                                            }}
+                                            >
+                                            {Variables.status.map((val, index) => {
+                                                return (
+                                                    <MenuItem value={val.status}>{val.status}</MenuItem>
+                                                );
+                                            })}
                                     </Select>
                                 </FormControl>
                                 </Grid>
+                                 );
+                                })}
                                 <Grid item xs={4}>
-                                    <Button variant="outlined" style={{ position: 'relative', top: '12%' }}>Add Review</Button>
+                                <Button onClick={() => {this.setState( {popupReview: true} )
+                                console.log(this.state.popupReview)}}
+                                        variant="outlined" style={{ position: 'relative', top: '12%' }}>Add Review
+                                    </Button>
+                                    <Dialog
+                                        open={this.state.popupReview}
+                                        onClose={() => {this.setState( {popupReview: false} )}}
+                                        aria-labelledby="alert-dialog-title"
+                                        aria-describedby="alert-dialog-description"
+                                    >
+                                        <DialogTitle id="alert-dialog-title">{"Review"}</DialogTitle>
+                                        <DialogContent>
+                                            <DialogContentText id="alert-dialog-description">
+
+                                                <Grid container spacing={2}>
+                                                    <Grid item xs={5}>
+                                                    </Grid>
+                                                    <Grid item xs={6} style={{textAlign: 'right'}}>
+                                                        <Rating name="no-value" value={this.state.reviewRating} max={10} style={{marginTop:'0.3vw'}}
+                                                        onChange={(event, newValue) => {
+                                                        this.setState({reviewRating: newValue});
+                                                        }}/>
+                                                    </Grid>
+                                                    <Grid item xs={1}>
+                                                        <h2 style={{marginTop:'0px',marginBottom:'0px'}}> {this.state.reviewRating} </h2>
+                                                    </Grid>
+                                                    
+                                                        <TextField
+                                                            style={{ marginTop: '5px', width:'100%'}}
+                                                            id="outlined-multiline-static"
+                                                            label="Write Review"
+                                                            multiline
+                                                            rows={10}
+                                                            defaultValue="Write Your Review Here..."
+                                                        />
+                                                    
+                                                    </Grid>
+                                            </DialogContentText>
+                                        </DialogContent>
+                                        <DialogActions>
+                                        <Button onClick={() => {this.setState( {popupReview: false} )}}>Cancel</Button>
+                                        <Button onClick={() => {this.setState( {popupReview: false} )}} autoFocus>OK</Button>
+                                        </DialogActions>
+                                    </Dialog>
                                 </Grid>
                             </Grid>
                             

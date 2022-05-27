@@ -314,6 +314,23 @@ class NormalGameTable extends Component {
 
 class SearchGameTable extends Component {
 
+  // Fetch data from local storage 
+  getStateFromLocalStorage = () => { 
+    let data = localStorage.getItem('Games'); 
+    console.log(data);
+    if(data !== null) {
+      this.setState({topGames:JSON.parse(data)}); 
+    }else{
+      this.saveStateToLocalStorage();
+    }
+    
+  }
+
+  componentDidMount() { 
+    // Fetch data from local storage 
+    this.getStateFromLocalStorage(); 
+    console.log("Component mounted");
+  } 
   constructor(props) {
       super(props);
       this.state = {
@@ -447,4 +464,131 @@ class SearchUserTable extends Component {
   }
 }
 
-export {FilteredGameTable, NormalGameTable, SearchGameTable, SearchUserTable};
+class UniqueUserTable1 extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+        unique : props.unique,
+        user:props.user
+      };
+    }
+
+  render(){
+      return (
+        <div>
+          <TableContainer  sx={{ marginLeft: '4%'}} component={Paper}>
+            <Table aria-label="customized table">
+              <TableHead>
+                <TableRow key="Rank">
+                  <StyledTableCell align="center">Art</StyledTableCell>
+                  <StyledTableCell align="center">Title</StyledTableCell>
+                  <StyledTableCell align="center">{this.state.user} Score</StyledTableCell>
+                  </TableRow>
+              </TableHead>
+              <TableBody>
+                {this.state.unique.map((val, index) => {
+                  return (
+                      <StyledTableRow style={{ textDecoration: "none"}}>
+                        <StyledTableCell align="center" scope="row" component={Link} to="/GamePage" style={{ textDecoration: "none"}} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
+
+                        <StyledTableCell component={Link} to="/GamePage"  scope="row" sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center"}} align="center"><h3>{val.title}</h3></StyledTableCell>
+                        <StyledTableCell  sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.score}</h3></StyledTableCell>
+                      </StyledTableRow>
+                    );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer> 
+        </div>
+      );
+  }
+}
+
+class UniqueUserTable2 extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+        unique : props.unique,
+        user:props.user
+      };
+    }
+
+  render(){
+      return (
+        <div>
+          <TableContainer  sx={{ marginLeft: '4%'}} component={Paper}>
+            <Table aria-label="customized table">
+              <TableHead>
+                <TableRow key="Rank">
+                  <StyledTableCell align="center">Art</StyledTableCell>
+                  <StyledTableCell align="center">Title</StyledTableCell>
+                  <StyledTableCell align="center">{this.state.user} Score</StyledTableCell>
+                  </TableRow>
+              </TableHead>
+              <TableBody>
+                {this.state.unique.map((val, index) => {
+                  return (
+                      <StyledTableRow style={{ textDecoration: "none"}}>
+                        <StyledTableCell align="center" scope="row" component={Link} to="/GamePage" style={{ textDecoration: "none"}} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
+                        
+                        <StyledTableCell component={Link} to="/GamePage" sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center"}} align="center"><h3>{val.title}</h3></StyledTableCell>
+                        <StyledTableCell  sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.score}</h3></StyledTableCell>
+                      </StyledTableRow>
+                    );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer> 
+        </div>
+      );
+  }
+}
+class SharedGameTable extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+        shared : props.shared,
+      };
+    }
+
+  render(){
+      return (
+        <div>
+          <TableContainer  sx={{ marginLeft: '4%'}} component={Paper}>
+            <Table aria-label="customized table">
+              <TableHead>
+                <TableRow key="Rank">
+                  <StyledTableCell align="center">Art</StyledTableCell>
+                  <StyledTableCell align="center">Title</StyledTableCell>
+                  <StyledTableCell align="center">Cunha Score</StyledTableCell>
+                  <StyledTableCell align="center">Pedrocarush Score</StyledTableCell>
+                  <StyledTableCell align="center">Difference </StyledTableCell>
+
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {this.state.shared.map((val, index) => {
+                  return (
+                      <StyledTableRow style={{ textDecoration: "none"}}>
+                        <StyledTableCell align="center" scope="row" component={Link} to="/GamePage" style={{ textDecoration: "none"}} sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center", display: "flex"}}><CardHeader  avatar={<Avatar sx={{ width: 80, height: 80,boxShadow: 3}} variant="rounded" alt="Game Icon" src={val.art}/>}/></StyledTableCell>
+                        
+                        <StyledTableCell  component={Link} to="/GamePage" sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]},justifyContent: "center"}} align="center"><h3>{val.title}</h3></StyledTableCell>
+                        <StyledTableCell  sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.cunhaScore}</h3></StyledTableCell>
+                        <StyledTableCell  sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.pedroScore}</h3></StyledTableCell>
+                        <StyledTableCell  sx={{'&:hover': {backgroundColor: 'D3D3D3',opacity: [0.9, 0.8, 0.7]}}} align="center"><h3>{val.difference}</h3></StyledTableCell>
+
+                      </StyledTableRow>
+                    );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer> 
+        </div>
+      );
+  }
+}
+
+export {FilteredGameTable, NormalGameTable, SearchGameTable, SearchUserTable, UniqueUserTable1,UniqueUserTable2,SharedGameTable};

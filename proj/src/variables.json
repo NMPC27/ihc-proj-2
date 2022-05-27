@@ -11,15 +11,15 @@
     {"rank":9, "art":"/games/undertale/icon.png" , "title":"Undertale","year":2015, "score":9,"yourScore":"N/A","status":"Not played"},
     {"rank":10, "art":"/games/cod/icon.jpg" , "title":"Call of Duty","year":2018, "score":8.99,"yourScore":10,"status":"Completed"},
     {"rank":11, "art":"/games/minecraft/icon.png" , "title":"Minecraft","year":2009, "score":8.98,"yourScore":"N/A","status":"Not played"},
-    {"rank":12, "art":"/games/gta5/icon.jpg" , "title":"GTA 5","year":2013, "score":8.97,"yourScore":"10","status":"Completed"},
-    {"rank":13, "art":"/games/csgo/icon.jpg" , "title":"CS GO","year":2012, "score":8.94,"yourScore":"10","status":"Completed"},
-    {"rank":14, "art":"/games/uncharted/icon.jpg" , "title":"Uncharted","year":2007, "score":8.93,"yourScore":"10","status":"Completed"},
-    {"rank":15, "art":"/games/godofwar/icon.jpg" , "title":"God Of War","year":2018, "score":8.92,"yourScore":"10","status":"Completed"},
-    {"rank":16, "art":"/games/fallguys/icon.jpg" , "title":"Fall Guys","year":2020, "score":8.92,"yourScore":"10","status":"Completed"},
-    {"rank":17, "art":"/games/fifa22/icon.png" , "title":"FIFA 22","year":2021, "score":8.90,"yourScore":"10","status":"Completed"},
-    {"rank":18, "art":"/games/amongus/icon.png" , "title":"Among Us","year":2018, "score":8.89,"yourScore":"10","status":"Completed"},
-    {"rank":19, "art":"/games/lol/icon.webp" , "title":"League of Legends","year":2009, "score":8.88,"yourScore":"10","status":"Completed"},
-    {"rank":20, "art":"/games/rust/icon.png" , "title":"Rust","year":2013, "score":8.88,"yourScore":"10","status":"Completed"},
+    {"rank":12, "art":"/games/gta5/icon.jpg" , "title":"GTA 5","year":2013, "score":8.97,"yourScore":10,"status":"Completed"},
+    {"rank":13, "art":"/games/csgo/icon.jpg" , "title":"CS GO","year":2012, "score":8.94,"yourScore":10,"status":"Completed"},
+    {"rank":14, "art":"/games/uncharted/icon.jpg" , "title":"Uncharted","year":2007, "score":8.93,"yourScore":10,"status":"Completed"},
+    {"rank":15, "art":"/games/godofwar/icon.jpg" , "title":"God Of War","year":2018, "score":8.92,"yourScore":10,"status":"Completed"},
+    {"rank":16, "art":"/games/fallguys/icon.jpg" , "title":"Fall Guys","year":2020, "score":8.92,"yourScore":10,"status":"Completed"},
+    {"rank":17, "art":"/games/fifa22/icon.png" , "title":"FIFA 22","year":2021, "score":8.90,"yourScore":10,"status":"Completed"},
+    {"rank":18, "art":"/games/amongus/icon.png" , "title":"Among Us","year":2018, "score":8.89,"yourScore":10,"status":"Completed"},
+    {"rank":19, "art":"/games/lol/icon.webp" , "title":"League of Legends","year":2009, "score":8.88,"yourScore":10,"status":"Completed"},
+    {"rank":20, "art":"/games/rust/icon.png" , "title":"Rust","year":2013, "score":8.88,"yourScore":10,"status":"Completed"},
     {"rank":21, "art":"/games/darkSouls3/icon.png" , "title":"Dark Souls 3","year":2016, "score":8.86,"yourScore":"N/A","status":"Not played"},
     {"rank":22, "art":"/games/anno1800/icon.png" , "title":"Anno 1800","year":2019, "score":8.86,"yourScore":"N/A","status":"Not played"},
     {"rank":23, "art":"/games/portal2/icon.png" , "title":"Portal 2","year":2011, "score":8.85,"yourScore":"N/A","status":"Not played"},
@@ -124,6 +124,22 @@
     {"img":"/avatar/Strom.webp", "name":"Strom"},
     {"img":"/avatar/Xanex.webp", "name":"Xanex"},
     {"img":"/avatar/Guida.jpg", "name":"Guida"}
-]
+],
+
+  "uniqueCunha":[
+    {"rank":7, "art":"/games/hades/icon.png", "title":"Hades","year":2020, "score":9},
+    {"rank":21, "art":"/games/darkSouls3/icon.png" , "title":"Dark Souls 3","year":2016, "score":8}
+  ],
+
+  "uniquePedro":[
+    {"rank":15, "art":"/games/godofwar/icon.jpg" , "title":"God Of War","year":2018, "score":10},
+    {"rank":16, "art":"/games/fallguys/icon.jpg" , "title":"Fall Guys","year":2020, "score":10}
+  ],
+  "sharedGames":[
+    {"rank":12, "art":"/games/gta5/icon.jpg" , "title":"GTA 5","year":2013, "cunhaScore":9,"pedroScore":10,"difference":1},
+    {"rank":13, "art":"/games/csgo/icon.jpg" , "title":"CS GO","year":2012, "cunhaScore":8,"pedroScore":10,"difference":2},
+    {"rank":14, "art":"/games/uncharted/icon.jpg" , "title":"Uncharted","year":2007, "cunhaScore":8,"pedroScore":10,"difference":2}
+  ]
+    
     
 }

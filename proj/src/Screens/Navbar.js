@@ -196,11 +196,6 @@ export default class Navbar extends Component {
                                 <Typography textAlign="center"> My Profile </Typography>
                             </MenuItem>
                             </a>
-                            <a href="/Edit" style={{ textDecoration: "none", color: "#000000" }}>
-                            <MenuItem>
-                                <Typography textAlign="center"> Edit Profile </Typography>
-                            </MenuItem>
-                            </a>
                             <a href="/Login" style={{ textDecoration: "none", color: "#000000" }}>
                             <MenuItem>
                                 <Typography textAlign="center"> Logout </Typography>
