@@ -43,48 +43,54 @@ export default class GamePage extends Component {
         this.state = {
             "topGames": Variables.topGames,
             genres: ["Action","Adventure","Casual"],
-            score: 9.3,
+            score: 8.65,
             num_reviews: 172385,
-            rank: 17,
+            rank: 27,
             mediaPage: 1,
             popupReview: false,
             reviewRating: 1,
             value: null,
             characters: [
-                {name: "Trevor Philips", img: "/games/gta5/characters/1.webp"},
-                {name: "Franklin Clinton", img: "/games/gta5/characters/2.webp"},
-                {name: "Michael De Santa", img: "/games/gta5/characters/3.webp"},
-                {name: "Jimmy de Santa", img: "/games/gta5/characters/4.webp"},
-                {name: "Lamar davis", img: "/games/gta5/characters/5.webp"},
-                {name: "Devin Weston", img: "/games/gta5/characters/6.webp"},
-                {name: "Trevor Philips", img: "/games/gta5/characters/1.webp"},
-                {name: "Franklin Clinton", img: "/games/gta5/characters/2.webp"},
-                {name: "Michael De Santa", img: "/games/gta5/characters/3.webp"},
-                {name: "Jimmy de Santa", img: "/games/gta5/characters/4.webp"},
-                {name: "Lamar davis", img: "/games/gta5/characters/5.webp"},
-                {name: "Devin Weston", img: "/games/gta5/characters/6.webp"}
+                {name: "Jack Carver", img: "/games/farCry/characters/1.png"},
+                {name: "Valerie Constantine", img: "/games/farCry/characters/2.png"},
+                {name: "Harland Doyle", img: "/games/farCry/characters/3.png"},
+                {name: "George Krieger", img: "/games/farCry/characters/4.png"},
+                {name: "Richard Crowe", img: "/games/farCry/characters/5.png"},
+                {name: "Jack Carver", img: "/games/farCry/characters/1.png"},
+                {name: "Valerie Constantine", img: "/games/farCry/characters/2.png"},
+                {name: "Harland Doyle", img: "/games/farCry/characters/3.png"},
+                {name: "George Krieger", img: "/games/farCry/characters/4.png"},
+                {name: "Richard Crowe", img: "/games/farCry/characters/5.png"},
+                
             ],
-            plot: `Quando um malandro de rua, um ladrão de bancos aposentado e um psicopata aterrorizante se envolvem com alguns dos criminosos mais assustadores e loucos do submundo, o governo dos EUA e a indústria do entretenimento, eles devem realizar golpes ousados para sobreviver nessa cidade implacável onde não podem confiar em ninguém, nem mesmo um no outro.
+            plot: `Far Cry comes to America in the latest installment of the award-winning franchise.
 
-            Grand Theft Auto V para PC oferece aos jogadores a opção de explorar o gigantesco e premiado mundo de Los Santos e Blaine County em resoluções de até 4K e além, assim como a chance de experimentar o jogo rodando a 60 FPS (quadros por segundo).
-            
-            O jogo oferece uma ampla seleção de opções de personalização específicas para o PC, com mais de 25 configurações separadas para qualidade de textura, sombreamentos, suavização de bordas e muito mais. Além disso, ele contém diversas opções de personalização dos controles de mouse e teclado. Entre as opções adicionais estão a densidade da população, o controle do tráfego de carros e pedestres, suporte para dois ou três monitores, compatibilidade com telas 3D e suporte para controle plug-and-play.
-            
-            Grand Theft Auto V para PC inclui o Grand Theft Auto Online, com suporte para até 30 jogadores e dois espectadores. Grand Theft Auto Online para PC inclui todas as atualizações de jogo e conteúdos criados pela Rockstar lançados desde que Grand Theft Auto Online foi ao ar, incluindo os recém-lançados Golpes e Modos Adversários.
-            
-            A versão para PC do Grand Theft Auto V e Grand Theft Auto Online apresenta o Modo em Primeira Pessoa, que dá aos jogadores a chance de explorar o mundo incrivelmente detalhado de Los Santos e Blaine County de uma maneira completamente nova.
-            
-            Grand Theft Auto V para PC também traz a estreia do Editor Rockstar, um poderoso conjunto de ferramentas criativas para capturar, editar e compartilhar, de maneira rápida e fácil, vídeos gravados dentro do Grand Theft Auto V e Grand Theft Auto Online. O Modo Diretor do Editor Rockstar permite que jogadores atuem em suas próprias cenas utilizando personagens proeminentes do Modo História, pedestres ou até animais para realizar a sua visão. Junto com opções de câmera e efeitos de edição avançados, que incluem efeitos de câmera lenta e acelerada e diversos filtros, os jogadores poderão adicionar suas próprias músicas, utilizando as faixas das estações de rádio do GTAV, ou controlar dinamicamente a intensidade da trilha sonora do jogo. Vídeos finalizados poderão ser enviados diretamente do Editor Rockstar para o YouTube ou para o Social Club da Rockstar Games, para facilitar o compartilhamento.
-            
-            Os músicos The Alchemist e Oh No, que fizeram a trilha sonora do jogo, retornam como os apresentadores de uma nova estação de rádio, a Lab FM. A estação apresenta músicas novas e exclusivas da dupla de produtores que foram inspiradas pela trilha sonora original do jogo. Entre os artistas colaboradores convidados estão Earl Sweatshirt, Freddie Gibbs, Little Dragon, Killer Mike, Sam Herring do Future Islands, e muito mais. Jogadores poderão descobrir Los Santos e Blaine County enquanto ouvem suas próprias músicas pelo Self Radio, uma nova estação de rádio que irá apresentar músicas criadas pelos jogadores.
-            
-            O conteúdo de acesso especial requer uma conta do Social Club da Rockstar Games. Acesse http://rockstargames.com/v/bonuscontent para mais detalhes.`,
+Welcome to Hope County, Montana, land of the free and the brave but also home to a fanatical doomsday cult known as Eden’s Gate. Stand up to cult leader Joseph Seed, and his siblings, the Heralds, to spark the fires of resistance and liberate the besieged community.
+
+FIGHT AGAINST A DEADLY CULT
+Free Hope County in solo or two-player co-op. Recruit Guns and Fangs for hire to help defeat the cult.
+
+A WORLD THAT HITS BACK
+Wreak havoc on the cult and its members but beware of the wrath of Joseph Seed and his followers.
+
+CARVE YOUR OWN PATH
+Build your character and choose your adventure in the largest customizable Far Cry game ever!
+
+DYNAMIC TOYS
+Take control of iconic muscle cars, ATV's, planes and a lot more to engage the cult forces in epic fights.
+
+RE-DEFINED STEALTH MECHANICS
+Enhance your gameplay with eye tracking. Tag enemies by looking at them to increase your stealth skills and help your teammates spot threats.
+Compatible with all Tobii Eye Tracking gaming devices.
+
+Additional notes:
+Eye tracking features available with Tobii Eye Tracking.`,
             media:[
-                {video: "https://www.youtube.com/embed/QkkoHAzjnUs?autoplay=1&mute=1"},
-                '/games/gta5/media/1.jpg',
-                '/games/gta5/media/2.jpg',
-                '/games/gta5/media/3.jpg',
-                '/games/gta5/media/4.jpg'
+                {video: "https://www.youtube.com/embed/NeyY5P35ARs?autoplay=1&mute=1"},
+                '/games/farCry/media/1.jpg',
+                '/games/farCry/media/2.jpg',
+                '/games/farCry/media/3.jpg',
+                '/games/farCry/media/4.jpg'
             ],
 
             reviews: [
@@ -92,55 +98,19 @@ export default class GamePage extends Component {
                     user: {name: 'Xanex', img: '/avatar/Xanex.webp'} ,
                     rating: 7,
                     helpfull: 137,
-                    text: `I am a 45 yo father, probably one of the oldest people playing this game. 
-I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
-so we installed it on his computer and he started playing. By the end of the week 
-he had 24 hours on this game. This was horrible for me, as it was already hard for 
-me to find ways to spend time with my son, as he is always out with his friends or 
-just, watching YouTube. So i decided to make a Steam account and get this game to 
-see if I could maybe play alongside him. loaded into the game, made my character 
-and world and started playing but I was stuck on what you where supposed to do. 
-I asked my Son for help and he hosted a game for me to join. loved it as it was the 
-best time had spent with my Son since my wife had died. This game has ever since 
-brought me and my son closer again and now we actually spend time together outside 
-the house together as well. This game reminded me that there's fun to be had in 
-everything, and it has brought both me and my Son many happy memories`
+                    text: `I am a 54 yo father, probably one of the oldest people playing this game. I am a single father to my Son, who is 14 now. My son got this game for Christmas in 2021 from his uncle, so we installed it on his computer and he started playing. By the end of the week he had 40 hours on this game. This was horrible for me, as it was already hard for me to find ways to spend time with my son, as he is always out with his friends or just watching Ukrainian men French kissing canines on YouTube. So i decided to make a Steam account and get this game to see if I could maybe play alongside him. I loaded into the game, picked my character and world and started playing but I was stuck on what you where supposed to do. I asked my Son for help and he hosted a game for me to join. I loved it as it was the best time I had spent with my son since my wife had died. This game has ever since brought me and my son closer again and now we actually spend time together outside the house together as well. This game reminded me that there's fun to be had in everything, and it has brought both me and my Son many happy memories`
                 },
                 {
                     user: {name: 'Strom', img: '/avatar/Strom.webp'} ,
-                    rating: 7,
+                    rating: 5,
                     helpfull: 34,
-                    text: `I am a 45 yo father, probably one of the oldest people playing this game. 
-I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
-so we installed it on his computer and he started playing. By the end of the week 
-he had 24 hours on this game. This was horrible for me, as it was already hard for 
-me to find ways to spend time with my son, as he is always out with his friends or 
-just, watching YouTube. So i decided to make a Steam account and get this game to 
-see if I could maybe play alongside him. loaded into the game, made my character 
-and world and started playing but I was stuck on what you where supposed to do. 
-I asked my Son for help and he hosted a game for me to join. loved it as it was the 
-best time had spent with my Son since my wife had died. This game has ever since 
-brought me and my son closer again and now we actually spend time together outside 
-the house together as well. This game reminded me that there's fun to be had in 
-everything, and it has brought both me and my Son many happy memories`
+                    text: `I am a 54 yo father, probably one of the oldest people playing this game. I am a single father to my Son, who is 14 now. My son got this game for Christmas in 2021 from his uncle, so we installed it on his computer and he started playing. By the end of the week he had 40 hours on this game. This was horrible for me, as it was already hard for me to find ways to spend time with my son, as he is always out with his friends or just watching Ukrainian men French kissing canines on YouTube. So i decided to make a Steam account and get this game to see if I could maybe play alongside him. I loaded into the game, picked my character and world and started playing but I was stuck on what you where supposed to do. I asked my Son for help and he hosted a game for me to join. I loved it as it was the best time I had spent with my son since my wife had died. This game has ever since brought me and my son closer again and now we actually spend time together outside the house together as well. This game reminded me that there's fun to be had in everything, and it has brought both me and my Son many happy memories`
                 },
                 {
                     user: {name: 'Cunha', img: '/avatar/Cunha.webp'} ,
-                    rating: 7,
+                    rating: 3,
                     helpfull: 4,
-                    text: `I am a 45 yo father, probably one of the oldest people playing this game.
-I am a single farther to my Son, who is 14 now. My son got this game for Christmas, 
-so we installed it on his computer and he started playing. By the end of the week 
-he had 24 hours on this game. This was horrible for me, as it was already hard for 
-me to find ways to spend time with my son, as he is always out with his friends or 
-just, watching YouTube. So i decided to make a Steam account and get this game to 
-see if I could maybe play alongside him. loaded into the game, made my character 
-and world and started playing but I was stuck on what you where supposed to do. 
-I asked my Son for help and he hosted a game for me to join. loved it as it was the 
-best time had spent with my Son since my wife had died. This game has ever since 
-brought me and my son closer again and now we actually spend time together outside 
-the house together as well. This game reminded me that there's fun to be had in 
-everything, and it has brought both me and my Son many happy memories`
+                    text: `I am a 54 yo father, probably one of the oldest people playing this game. I am a single father to my Son, who is 14 now. My son got this game for Christmas in 2021 from his uncle, so we installed it on his computer and he started playing. By the end of the week he had 40 hours on this game. This was horrible for me, as it was already hard for me to find ways to spend time with my son, as he is always out with his friends or just watching Ukrainian men French kissing canines on YouTube. So i decided to make a Steam account and get this game to see if I could maybe play alongside him. I loaded into the game, picked my character and world and started playing but I was stuck on what you where supposed to do. I asked my Son for help and he hosted a game for me to join. I loved it as it was the best time I had spent with my son since my wife had died. This game has ever since brought me and my son closer again and now we actually spend time together outside the house together as well. This game reminded me that there's fun to be had in everything, and it has brought both me and my Son many happy memories`
                 },
             ]
         }
@@ -209,10 +179,10 @@ everything, and it has brought both me and my Son many happy memories`
                                             labelId="demo-simple-select-label"
                                             id="demo-simple-select"
                                             label="Select Game State"
-                                            value={this.state.topGames[11].status}
+                                            value={this.state.topGames[26].status}
                                             onChange={(event) => {
                                                 var gamesCopy = this.state.topGames;
-                                                gamesCopy[11].status = event.target.value;
+                                                gamesCopy[26].status = event.target.value;
                                                 this.setState({
                                                     topGames: gamesCopy
                                                 })

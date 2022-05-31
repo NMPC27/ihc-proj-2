@@ -20,12 +20,12 @@ export default class GameSideBar extends Component {
         super(props);
     
         this.state = {
-            name: "GTA5",
-            score: 9.3,
-            icon: '/games/gta5/icon.jpg',
-            platforms: ["PC", "PS4", "XBOX"],
-            developer: "Rockstar Games",
-            releaseDate: "10/10/2018",
+            name: "Far Cry",
+            score: 8.65,
+            icon: '/games/farCry/icon.png',
+            platforms: ["PC", "PS3", "XBOX"],
+            developer: "Crytek Studios",
+            releaseDate: "23/03/2004",
             notes:"Add your Notes Here..."
         }
     }
