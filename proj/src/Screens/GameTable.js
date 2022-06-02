@@ -147,7 +147,7 @@ class FilteredGameTable extends Component {
                               }}
                               onChange={(event) => {
                                 var gamesCopy = this.state.topGames;
-                                gamesCopy[index].yourScore = event.target.value;
+                                gamesCopy[val.rank-1].yourScore = event.target.value;
                                 this.setState({
                                   topGames: gamesCopy
                                 })
@@ -166,7 +166,7 @@ class FilteredGameTable extends Component {
                                   label="Select"
                                   onChange={(event) => {
                                     var gamesCopy = this.state.topGames;
-                                    gamesCopy[index].status = event.target.value;
+                                    gamesCopy[val.rank-1].status = event.target.value;
                                     this.setState({
                                         topGames: gamesCopy
                                     })
