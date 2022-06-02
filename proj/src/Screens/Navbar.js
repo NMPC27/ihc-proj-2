@@ -105,7 +105,7 @@ export default class Navbar extends Component {
         
                   <Grid container spacing={2}>
                     <Grid item xs={1}>
-                      <a href="/" style={{ textDecoration: "none" }}>
+                      <a href="/Login" style={{ textDecoration: "none" }}>
                         <img src={"/logo.png"} alt="ERROR" style={{ marginTop:'1vw' }}></img>
                       </a>
                     </Grid>

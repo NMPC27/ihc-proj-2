@@ -6,6 +6,8 @@ import MyList from './Screens/MyList';
 import FriendPage from './Screens/FriendPage';
 import Search from './Screens/Search';
 import Login from './Screens/Login';
+import Similar from './Screens/Similar';
+
 
 export default function App() {
   return (
@@ -20,6 +22,7 @@ export default function App() {
           <Route path="MyList" element={<MyList />} />
           <Route path="Search" element={<Search />} />
           <Route path="Login" element={<Login />} />
+          <Route path="Similar" element={<Similar />} />
       </Routes>
     </div>
   );
@@ -56,6 +59,9 @@ function Home() {
           </li>
           <li>
             <a href="/Login">Login</a>
+          </li>
+          <li>
+            <a href="/Similar">Similar</a>
           </li>
         </ul>
       <h4>Para ver as paginas basta mudar o link ex. http://localhost:3000/UserPage e a partir dai ja se pode usar a navbar</h4>
