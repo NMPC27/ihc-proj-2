@@ -37,6 +37,7 @@ export default class Search extends Component {
             }else{
               alert("Error getting data from local storage");
             }
+            
         }
 
         componentDidMount() { 

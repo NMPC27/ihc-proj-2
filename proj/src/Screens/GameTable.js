@@ -314,6 +314,12 @@ class NormalGameTable extends Component {
 
 class SearchGameTable extends Component {
 
+
+  saveStateToLocalStorage = () => { 
+    localStorage.setItem('Games', JSON.stringify(this.state.topGames)); 
+    console.log("Saved to local storage");
+  }
+
   // Fetch data from local storage 
   getStateFromLocalStorage = () => { 
     let data = localStorage.getItem('Games'); 
@@ -323,6 +329,8 @@ class SearchGameTable extends Component {
     }else{
       this.saveStateToLocalStorage();
     }
+
+   
     
   }
 
@@ -380,7 +388,7 @@ class SearchGameTable extends Component {
                             }}
                             onChange={(event) => {
                               var gamesCopy = this.state.topGames;
-                              gamesCopy[index].yourScore = event.target.value;
+                              gamesCopy[val.rank-1].yourScore = event.target.value;
                               this.setState({
                                 topGames: gamesCopy
                               })
@@ -399,7 +407,7 @@ class SearchGameTable extends Component {
                                 label="Select"
                                 onChange={(event) => {
                                   var gamesCopy = this.state.topGames;
-                                  gamesCopy[index].status = event.target.value;
+                                  gamesCopy[val.rank-1].status = event.target.value;
                                   this.setState({
                                       topGames: gamesCopy
                                   })
