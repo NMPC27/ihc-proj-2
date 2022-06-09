@@ -15,7 +15,8 @@ export default function App() {
     <div>
       <Routes>
 
-          <Route index path="Home" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="Home" element={<Home />} />
           <Route path="UserPage" element={<UserPage />} />
           <Route path="FriendPage" element={<FriendPage />} />
           <Route path="GamePage" element={<GamePage />} />
