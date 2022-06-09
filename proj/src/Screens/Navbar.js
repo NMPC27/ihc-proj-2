@@ -2,18 +2,19 @@ import * as React from 'react';
 import { Component } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import { Grid } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
+
+import IconButton from '@mui/material/IconButton';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { Link } from 'react-router-dom';
+
 
 import Overlay from './Overlay';
 
@@ -83,7 +84,6 @@ export default class Navbar extends Component {
       if (e.key === 'Enter') {
         //alert(e.target.value) // e.target.value -> name of the game
         this.saveStateToLocalStorage(e.target.value);
-        const { href } = window.location;
         window.location.href = '/Search';
         
       }
@@ -97,115 +97,52 @@ export default class Navbar extends Component {
     render() {
         return (
           <div>
-            <Overlay/>
+            <Overlay />
             <AppBar position="static">
               <Container maxWidth="x0.5">
                 <Toolbar disableGutters>
-        
-        
                   <Grid container spacing={2}>
                     <Grid item xs={1}>
-                      <a href="/Login" style={{ textDecoration: "none" }}>
+                      <a href="/Home" style={{ textDecoration: "none" }}>
                         <img src={"/logo.png"} alt="ERROR" style={{ marginTop:'1vw' }}></img>
                       </a>
                     </Grid>
                     <Grid item xs={1}>
-                        <a href="/TopGames" style={{ textDecoration: "none" }}>
-                        <Button
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                        >
-                        Top Games
-                        </Button>
-                        </a>
+                      <a href="/TopGames" style={{ textDecoration: "none" }}>
+                        <Button sx={{ my: 2, color: 'white', display: 'block' }}> Top Games </Button>
+                      </a>
                     </Grid>
-                    <Grid item xs={1}>
-                        <Button
-                        sx={{ my: 2, color: 'white', display: 'block' }}
-                        onClick={()=>{document.getElementById("overlay").style.display = "block";
-                                      document.body.style.overflow = 'hidden';
-                        }}
-                        >
-                        Genres
-                        </Button>
-                    </Grid>
-
+                    {/* <Grid item xs={1}>
+                      <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={()=>{document.getElementById("overlay").style.display = "block"; document.body.style.overflow = 'hidden'; }} > Genres </Button>
+                    </Grid> */}
                     <Grid item xs={5}>
-                        <div style={{ marginTop:'1vw' }}>
+                      <div style={{ marginTop:'1vw' }}>
                         <Search>
-                            <SearchIconWrapper>
-                                <SearchIcon />
-                            </SearchIconWrapper>
-                            <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                            style={{ width: '100%' }}
-                            onKeyDown={this._handleKeyDown}
-                            
-                            />
+                          <SearchIconWrapper>
+                            <SearchIcon />
+                          </SearchIconWrapper>
+                          <StyledInputBase placeholder="Search…" inputProps={{ 'aria-label': 'search' }} style={{ width: '100%' }} onKeyDown={this._handleKeyDown} />
                         </Search>
-                        </div>
+                      </div>
                     </Grid>
                     <Grid item xs={1}></Grid>
-                  
                     <Grid item xs={3}>
-                        <Tooltip title="Open Menu">
-                        <Item style={{ marginTop:'0.45vw' }}
-                        onClick={
-                            () => {
-                                this.setState({menu_open: !this.state.menu_open})
-                            }
-                        } 
-                        >
-                            
-                            <Grid container spacing={2}>
-                                <Grid item xs={10}>
-                                    <h2 style={{ marginTop: '7px', marginBottom: '0px'}} >{ this.state.user.name }</h2>
-                                </Grid>
-                                <Grid item xs={2}>
-                                    <Avatar alt="ERROR" src={ this.state.user.img } />
-                                </Grid>
+                      
+                        <Item  style={{ marginTop:'0.45vw' }}> <Grid container spacing={2}>
+                            <Grid component={Link} to="/UserPage" style={{ textDecoration: "none"}} item xs={10}>
+                              <h2 style={{ marginTop: '7px', marginBottom: '0px'}}>{ this.state.user.name }</h2>
                             </Grid>
-                            
-                            
-
-
-                            
-                            <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={this.state.menu_open}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={this.state.menu_open}
-                            onClose={
-                                () => {
-                                    this.setState({menu_open: !this.state.menu_open})
-                                }
-                            }
-                            >
-                            
-                            <a href="/UserPage" style={{ textDecoration: "none", color: "#000000" }}>
-                            <MenuItem>
-                                <Typography textAlign="center"> My Profile </Typography>
-                            </MenuItem>
-                            </a>
-                            <a href="/Login" style={{ textDecoration: "none", color: "#000000" }}>
-                            <MenuItem>
-                                <Typography textAlign="center"> Logout </Typography>
-                            </MenuItem>
-                            </a>
-                
-                            </Menu>
-                          </Item>
-                          </Tooltip>
+                            <Grid   item xs={2}>
+                              <Avatar href="/UserPage"  alt="ERROR" src={ this.state.user.img } />
+                            </Grid>
+                          </Grid>
+                        </Item>
                     </Grid>
+                    <Grid item xs={1}>
+                        <IconButton href="/Login" aria-label="fingerprint" size="large" style={{color: "#eceff1",marginTop:'0.6vw',marginLeft:'1vw' }}>
+                        <LogoutIcon fontSize="inherit"/>
+                      </IconButton>
+                        </Grid>
                   </Grid>
                 </Toolbar>
               </Container>

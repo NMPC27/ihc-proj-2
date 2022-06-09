@@ -51,11 +51,11 @@ export default class UserInfo extends Component {
                         <Item>
                             <Grid container spacing={2}>
                                 <Grid item xs={8}>
-                                    <h2 style={{ marginTop: '7px', marginBottom: '0px'}}>Statistics</h2>
+                                    <h2 style={{ marginTop: '7px', marginBottom: '0px'}}>List Statistics</h2>
                                 </Grid>
                                 <Grid item xs={4}>
                                 <a href="/MyList" style={{ textDecoration: "none" }}>
-                                <Button onClick={() => { this.saveStateToLocalStorage("All"); }} variant="outlined">LIST</Button>
+                                <Button onClick={() => { this.saveStateToLocalStorage("All"); }} variant="contained">LIST</Button>
                                 </a>
                                 </Grid>
                             </Grid>

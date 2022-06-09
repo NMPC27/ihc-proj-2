@@ -57,13 +57,13 @@ export default class Search extends Component {
                         {   
                             this.state.searchType === 'Games' ?
                             <ButtonGroup variant="outlined" aria-label="outlined button group">
-                                <Button variant='contained'>Games</Button>
-                                <Button onClick={()=> {this.setState({searchType: 'Users'})}}>Users</Button>
+                                <Button size="large" sx={{ m: 1.5 }} variant='contained'>Games</Button>
+                                <Button size="large" sx={{ m: 1.5 }} onClick={()=> {this.setState({searchType: 'Users'})}}>Users</Button>
                             </ButtonGroup>
                             :
                             <ButtonGroup variant="outlined" aria-label="outlined button group">
-                                <Button onClick={()=> {this.setState({searchType: 'Games'})}}>Games</Button>
-                                <Button variant='contained'>Users</Button>
+                                <Button size="large" sx={{ m: 1.5 }} onClick={()=> {this.setState({searchType: 'Games'})}}>Games</Button>
+                                <Button size="large" sx={{ m: 1.5 }} variant='contained'>Users</Button>
                             </ButtonGroup>
                         }
                         

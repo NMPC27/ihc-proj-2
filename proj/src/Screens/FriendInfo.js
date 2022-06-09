@@ -45,11 +45,11 @@ export default class FriendInfo extends Component {
                         <Item>
                             <Grid container spacing={2}>
                                 <Grid item xs={8}>
-                                    <h2 style={{ marginTop: '7px', marginBottom: '0px'}}>Statistics</h2>
+                                    <h2 style={{ marginTop: '7px', marginBottom: '0px'}}>List Statistics</h2>
                                 </Grid>
                                 <Grid item xs={4}>
                                 <a href="/MyList" style={{ textDecoration: "none" }}>
-                                <Button variant="outlined">LIST</Button>
+                                <Button variant="contained">LIST</Button>
                                 </a>
                                 </Grid>
                             </Grid>

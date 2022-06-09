@@ -23,8 +23,20 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import Rating from '@mui/material/Rating';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import Dialog  from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import IconButton from '@mui/material/IconButton';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+
 
 import Variables from "../variables.json";
+
 
 
 const statusColors = [
@@ -96,11 +108,16 @@ class FilteredGameTable extends Component {
       // Fetch data from local storage 
       this.getStateFromLocalStorage(); 
       console.log("Component mounted");
-    } 
+    }
+
+
 
     constructor(props) {
         super(props);
         this.state = {
+          popupReview: false,
+          tempRank: 1,
+          review: "",
           "topGames" : Variables.topGames
         };
       }
@@ -120,6 +137,7 @@ class FilteredGameTable extends Component {
                     <StyledTableCell align="center">Score</StyledTableCell>
                     <StyledTableCell align="center">Your Score</StyledTableCell>
                     <StyledTableCell align="center">Status</StyledTableCell>
+                    <StyledTableCell align="center">Review</StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -135,25 +153,17 @@ class FilteredGameTable extends Component {
                           <StyledTableCell align="center">{val.year}</StyledTableCell>
                           <StyledTableCell align="center">{val.score}</StyledTableCell>
                           <StyledTableCell align="center">
-                            <TextField
-                              id="filled-number"
-                              label="Your Score"
-                              type="number"
-                              inputProps={{ min: 0, max: 10 }}
-                              value={val.yourScore}
-                              defaultValue={val.yourScore}
-                              InputLabelProps={{
-                                shrink: true,
-                              }}
-                              onChange={(event) => {
-                                var gamesCopy = this.state.topGames;
-                                gamesCopy[val.rank-1].yourScore = event.target.value;
-                                this.setState({
-                                  topGames: gamesCopy
-                                })
-                               this.saveStateToLocalStorage();
-                              }}
-                            />
+                          
+                          <Rating name="no-value" value={val.yourScore} max={10} style={{marginTop:'0.3vw'}}
+                            onChange={(event, newValue) => {
+                              var gamesCopy = this.state.topGames;
+                              gamesCopy[val.rank-1].yourScore = newValue;
+                              this.setState({
+                                topGames: gamesCopy
+                              })
+                             this.saveStateToLocalStorage();
+                            
+                          }}/>
                           </StyledTableCell>
                           <StyledTableCell align="left">
                             <Box sx={{ minWidth: 120 }}>
@@ -173,14 +183,61 @@ class FilteredGameTable extends Component {
                                     this.saveStateToLocalStorage();
                                   }}
                                   >
-                                  {Variables.status.map((val, index) => {
+                                  {Variables.status.map((val2, index) => {
                                       return (
-                                          <MenuItem value={val.status}>{val.status}</MenuItem>
+                                          <MenuItem value={val2.status}>{val2.status}</MenuItem>
                                       );
                                   })}
                                   </Select>
                               </FormControl>
                             </Box>
+                          </StyledTableCell>
+                          <StyledTableCell align="center" scope="row">
+                            <IconButton onClick={() => {this.setState( {popupReview: true,tempRank:val.rank} ) }} aria-label="fingerprint" size="large" style={{marginTop:'0.6vw',marginLeft:'1vw' }}>
+                              <AddBoxIcon fontSize="inherit"/>
+                            </IconButton>
+                            <Dialog
+                                        open={this.state.popupReview}
+                                        onClose={() => {this.setState( {popupReview: false} )}}
+                                    >
+                                        <DialogTitle>{"Review"}</DialogTitle>
+                                        <DialogContent>
+                                            <DialogContentText>
+
+                                                <Grid container spacing={2}>
+                                                    <Grid item xs={5}>
+                                                    </Grid>
+                                                        <TextField
+                                                            style={{ marginTop: '5px', width:'100%'}}
+                                                            id="outlined-multiline-static"
+                                                            label="Write Review"
+                                                            multiline
+                                                            rows={10}
+                                                            placeholder={this.state.topGames[this.state.tempRank-1].review}
+                                                            
+                                                            onBlur={(event) => {
+                                                              
+                                                                this.setState({
+                                                                    review: event.target.value
+                                                                })
+                                                            }}
+                                                        />
+                                                    
+                                                    </Grid>
+                                            </DialogContentText>
+                                        </DialogContent>
+                                        <DialogActions>
+                                        <Button onClick={() => {this.setState( {popupReview: false} )}}>Cancel</Button>
+                                        <Button onClick={() => {var trueIndex = this.state.tempRank-1;
+                                                              var gamesCopy = this.state.topGames;
+                                                              gamesCopy[trueIndex].review = this.state.review;
+                                                              this.setState({
+                                                                  topGames: gamesCopy,
+                                                                  popupReview: false
+                                                              })
+                                                              this.saveStateToLocalStorage();}} autoFocus>OK</Button>
+                                        </DialogActions>
+                                    </Dialog>        
                           </StyledTableCell>
                       </StyledTableRow>
                       );
@@ -254,24 +311,16 @@ class NormalGameTable extends Component {
                       <StyledTableCell align="center">{val.year}</StyledTableCell>
                       <StyledTableCell align="center">{val.score}</StyledTableCell>
                       <StyledTableCell align="center">
-                        <TextField
-                          id="filled-number"
-                          label="Your Score"
-                          type="number"
-                          value={val.yourScore}
-                          defaultValue={val.yourScore}
-                          InputLabelProps={{
-                            shrink: true,
-                          }}
-                          onChange={(event) => {
-                            var gamesCopy = this.state.topGames;
-                            gamesCopy[index].yourScore = event.target.value;
-                            this.setState({
-                              topGames: gamesCopy
-                            })
-                           this.saveStateToLocalStorage();
-                          }}
-                        />
+                      <Rating name="no-value" value={val.yourScore} max={10} style={{marginTop:'0.3vw'}}
+                            onChange={(event, newValue) => {
+                              var gamesCopy = this.state.topGames;
+                              gamesCopy[val.rank-1].yourScore = newValue;
+                              this.setState({
+                                topGames: gamesCopy
+                              })
+                             this.saveStateToLocalStorage();
+                            
+                          }}/>
                       </StyledTableCell>
                       <StyledTableCell align="left">
                         <Box sx={{ minWidth: 120 }}>
@@ -376,25 +425,16 @@ class SearchGameTable extends Component {
                         <StyledTableCell align="center">{val.year}</StyledTableCell>
                         <StyledTableCell align="center">{val.score}</StyledTableCell>
                         <StyledTableCell align="center">
-                          <TextField
-                            id="filled-number"
-                            label="Your Score"
-                            type="number"
-                            inputProps={{ min: 0, max: 10 }}
-                            value={val.yourScore}
-                            defaultValue={val.yourScore}
-                            InputLabelProps={{
-                              shrink: true,
-                            }}
-                            onChange={(event) => {
+                        <Rating name="no-value" value={val.yourScore} max={10} style={{marginTop:'0.3vw'}}
+                            onChange={(event, newValue) => {
                               var gamesCopy = this.state.topGames;
-                              gamesCopy[val.rank-1].yourScore = event.target.value;
+                              gamesCopy[val.rank-1].yourScore = newValue;
                               this.setState({
                                 topGames: gamesCopy
                               })
                              this.saveStateToLocalStorage();
-                            }}
-                          />
+                            
+                          }}/>
                         </StyledTableCell>
                         <StyledTableCell align="left">
                           <Box sx={{ minWidth: 120 }}>

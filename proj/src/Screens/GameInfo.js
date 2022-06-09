@@ -234,7 +234,7 @@ Eye tracking features available with Tobii Eye Tracking.`,
                                                             label="Write Review"
                                                             multiline
                                                             rows={10}
-                                                            defaultValue="Write Your Review Here..."
+                                                            placeholder="Write Your Review Here..."
                                                         />
                                                     
                                                     </Grid>
